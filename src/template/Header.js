@@ -8,7 +8,7 @@ import '../css/header.css';
 var URL_TRAINING = "https://www.yokogawa.com/solutions/services/training/";
 var URL_SERVICE = "https://www.yokogawa.com/solutions/services/basic-maintenace-services/";
 
-export default class header extends Component {
+export default class Header extends Component {
     render() {
         return (
             <div>
@@ -43,11 +43,6 @@ export default class header extends Component {
 
                 </div >
             </div>
-            // <nav>
-            //     <NavLink exact activeClassName="active" to="/">Home</NavLink>
-            //     <NavLink activeClassName="active" to="/users">Users</NavLink>
-            //     <NavLink activeClassName="active" to="/contact">Contact</NavLink>
-            // </nav>
         )
     }
 }

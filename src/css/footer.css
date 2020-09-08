@@ -1,19 +1,35 @@
 #footer-bule{
     background-color: #004F9B;
     width: 100%;
-    height: 200px;
+    height: auto;
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 3%;
 }
 
 #footer-black{
     background-color: #29292A;
     width: 100%;
-    height: 50px;
+    height: 3%;
     position: fixed;
     left: 0;
     bottom: 0;
+}
+
+#content{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#about1{
+    color: aliceblue;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+#about2{
+    color: aliceblue;
+    font-size: 0.8vw;
 }
 
 #footer{
@@ -21,3 +37,27 @@
     left: 0;
     bottom: 0;
 }
+
+#imgFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .con {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
