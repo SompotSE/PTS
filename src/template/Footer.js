@@ -56,6 +56,7 @@ export default class Footer extends Component {
                                         className="d-inline-block align-top"
                                         alt="logo"
                                     />
+                                    {/* <Image src={logoFacebook} fluid/> */}
                                 </a>
                                 <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer" id="link">
                                     <img
@@ -65,6 +66,7 @@ export default class Footer extends Component {
                                         className="d-inline-block align-top"
                                         alt="logo"
                                     />
+                                    {/* <Image src={logoLine} fluid/> */}
                                 </a>
                                 <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer" id="link">
                                     <img
@@ -74,6 +76,7 @@ export default class Footer extends Component {
                                         className="d-inline-block align-top"
                                         alt="logo"
                                     />
+                                    {/* <Image src={logoYoutube} fluid/> */}
                                 </a>
                             </Row>
                         </Col>

@@ -89,6 +89,7 @@
     width: 8%;
     height: 8%; 
     word-wrap: break-word;
+    display: block;
   }
 
   #link2{
