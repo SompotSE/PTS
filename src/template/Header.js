@@ -13,7 +13,7 @@ export default class Header extends Component {
         return (
             <div>
                 <Navbar expand="md" id="nav-bar" style={{ backgroundColor: "#004F9B", opacity: "100%" }} >
-                    <Navbar.Brand href="/" style={{ marginLeft: "10%" }}>
+                    <Navbar.Brand href="/" style={{ marginLeft: "10%" }} id="link2">
                         <img
                             src={logo}
                             width="30%"
