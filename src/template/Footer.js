@@ -58,7 +58,7 @@ export default class Footer extends Component {
                                     />
                                     {/* <Image src={logoFacebook} fluid/> */}
                                 </a>
-                                <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer" id="link">
+                                <a href="/" target="_blank" rel="noopener noreferrer" id="link">
                                     <img
                                         src={logoLine}
                                         width="100%"
@@ -68,7 +68,7 @@ export default class Footer extends Component {
                                     />
                                     {/* <Image src={logoLine} fluid/> */}
                                 </a>
-                                <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer" id="link">
+                                <a href="/" target="_blank" rel="noopener noreferrer" id="link">
                                     <img
                                         src={logoYoutube}
                                         width="100%"

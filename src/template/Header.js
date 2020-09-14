@@ -11,6 +11,8 @@ import '../css/header.css';
 
 var URL_TRAINING = "https://www.yokogawa.com/solutions/services/training/";
 var URL_SERVICE = "https://www.yokogawa.com/solutions/services/basic-maintenace-services/";
+var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
+var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
 
 export default class Header extends Component {
     render() {
@@ -18,7 +20,7 @@ export default class Header extends Component {
             // <div>
 
                 <Container fluid>
-                    <Navbar expand="sm" id="nav-bar" style={{ backgroundColor: "#004F9B", opacity: "80%" }} >
+                    <Navbar expand="sm" id="nav-bar" style={{ backgroundColor: "#004F9B", opacity: "100%" , zIndex: "900"}} >
                         <Col id="imgLogo">
                             {/* <Navbar.Brand href="/" id="imgLogo"> */}
                             <img
@@ -42,9 +44,9 @@ export default class Header extends Component {
                                 <NavDropdown title="PRODUCT" id="nav-dropdown">
                                     <NavDropdown.Item href="" >Test & Measuremwnt Product</NavDropdown.Item>
                                     <NavDropdown.Item href="" >LABPTS+</NavDropdown.Item>
-                                    <NavDropdown.Item href="" >Digital Signal Processing and Control Engineering</NavDropdown.Item>
+                                    <NavDropdown.Item href={URL_DIGITAL} target="_blank">Digital Signal Processing and Control Engineering</NavDropdown.Item>
                                     <NavDropdown.Item href="" >Testing Solution Integration</NavDropdown.Item>
-                                    <NavDropdown.Item href="" >Metrological Sensors & Systems</NavDropdown.Item>
+                                    <NavDropdown.Item href={URL_METROLOGICAL} target="_blank">Metrological Sensors & Systems</NavDropdown.Item>
                                 </NavDropdown>
                                 <Nav.Link href={URL_TRAINING} target="_blank" id="nav-Header">TRAINING</Nav.Link>
                                 <Nav.Link href={URL_SERVICE} target="_blank" id="nav-Header">SERVICE</Nav.Link>

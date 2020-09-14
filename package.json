@@ -1,5 +1,6 @@
 {
   "name": "pts",
+  "homepage": "http://165.22.250.24:5000/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
