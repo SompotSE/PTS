@@ -3,10 +3,6 @@ import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 // import map from '../image/map.png'
 import map from '../image/map.png';
 
-const sty = {
-
-}
-
 export default class Request extends Component {
     render() {
         return (
