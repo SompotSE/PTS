@@ -1,0 +1,34 @@
+#sectionStyle{
+    /* background-image: url(../image/Cover.png); */
+    background-image: url(../image/cover1.jpg);
+    width: 100%;
+    height:680px ;
+    /* height: auto 300px; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 100% auto;
+}
+
+#business{
+    background-color: aliceblue;
+    opacity: 80%;
+    width: fit-content;
+    padding: 1%;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+#imgbis{
+    width: "30%";
+    margin: "2%";
+}
+
+#busContent{
+    margin: 2%;
+    padding: 3%;
+    margin-left: 3%;
+    height: 100%;
+    background-color: aliceblue;
+    opacity: 85%;
+    border-radius: 5%;
+}

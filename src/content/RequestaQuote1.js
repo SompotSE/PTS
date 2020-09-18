@@ -16,8 +16,8 @@ export default class Request extends Component {
                     <Col xs={1} md={1}></Col>
                 </Row>
                 <Row style={{}}>
-                    <Col xs={1} md={1}></Col>
-                    <Col xs={6} md={6}>
+                    <Col xs={2} md={1}></Col>
+                    <Col xs={8} md={5}>
                         <div style={{ textAlign: 'left', fontSize: '30', fontWeight: 'bold', paddingBottom: '3%',color:'DarkBlue'}}>CONTRACT US</div>
                         <Form>
                             <Form.Group controlId="formGroupName">
@@ -42,8 +42,9 @@ export default class Request extends Component {
                             <Button type="submit" style={{background: 'Navy', marginTop:'1%'}}>Send message</Button>
                         </Form>
                     </Col>
-                    <Col xs={1} md={1}></Col>
-                    <Col xs={3} md={3}>
+                    <Col xs={2} md={1}></Col>
+                    <Col xs={2} md={1}></Col>
+                    <Col xs={8} md={3}>
                         <div style={{ textAlign: 'left', fontSize: '30', fontWeight: 'bold', paddingTop: '25%'}}>ADDRESS</div>
                         <div>PTS COMBINATION CO., LTD. 11/26 Moo 1, Banmai tumbol, Pakkret, Nontaburi, 11120 Thailand</div>
                         <div></div>
@@ -55,7 +56,7 @@ export default class Request extends Component {
                         <div>M0-Fr : 8.30 - 17.00</div>
                         <div>Sa-Su : closed</div>
                     </Col>
-                    <Col xs={1} md={1}></Col>
+                    <Col xs={2} md={1}></Col>
                 </Row>
             </Container>
         )
