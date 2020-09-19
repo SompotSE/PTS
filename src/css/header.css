@@ -11,6 +11,15 @@
 #nav-Header{
     color: aliceblue;
     font-weight: bold;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#nav-Header1{
+    color: #C7F50A;
+    font-weight: bold;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 #header{
@@ -87,3 +96,34 @@ body, html{
     margin-right: 0px;
     margin-left: 0px;
 }
+
+/* @media (min-width: 576px) */
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+
+.nav-link {
+    display: contents;
+}
+
+#dopdown{
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+/* .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #C7F50A;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: "#C7F50A";
+} */

@@ -13,7 +13,8 @@ const busContent = {
     borderRadius: "5%"
 };
 const contentDetail = {
-    fontSize: "calc(0.35vh + 1vw)"
+    fontSize: "calc(0.35vh + 0.95vw)"
+    // fontSize: '100'
 };
 export default class About extends Component {
     // constructor(props) {
@@ -23,13 +24,13 @@ export default class About extends Component {
     render() {
         return (
             <Container>
-                <div id="sectionStyle">
+                <div id="sectionStyle2">
                     <div id="business">BUSINESS OVERVIEW</div>
                     <Row>
-                        <Col md={7} xs={7}>
-                            <Image src={map} style={{ width: "100%", margin: "2%" }} fluid responsive />
+                        <Col md={7} xs={12}>
+                            <Image src={map} style={{ width: "100%", padding: "2%" }} fluid responsive />
                         </Col>
-                        <Col md={5} xs={5}>
+                        <Col md={5} xs={12}>
                             <div style={busContent}>
                                 <p style={contentDetail}>  
                                     PTS COMBINATION Co., Ltd. Is committed to providing

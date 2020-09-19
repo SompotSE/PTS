@@ -13,7 +13,7 @@ export default class Footer extends Component {
             <div id="footer2">
                 <Container id="footer-bule" fluid>
                     <Row id="content">
-                        <Col xs={6} md={4}>
+                        <Col xs={12} md={4}>
                             <div id="about1"> ABOUT US </div>
                             <div id="about2"> PTS COMBINATION Co., Ltd. Is committed to providing
                             complete solution to general research test and monitoring equipment needs
@@ -21,7 +21,7 @@ export default class Footer extends Component {
                             multi-function and state of the art Test and Measurement instruments
                             to government and private research facilities. </div>
                         </Col>
-                        <Col xs={6} md={4} id="imgFooter">
+                        <Col xs={12} md={4} id="imgFooter">
                             <img
                                 src={logo}
                                 width="60%"
@@ -36,14 +36,14 @@ export default class Footer extends Component {
                 </Container>
                 <Container id="footer-black" fluid>
                     <Row id="content">
-                        <Col xs={8} md={8}>
+                        <Col xs={7} md={7}>
                             <Row>
                                 <div id="about4"> LOGIN </div>
                                 <div id="about3"> | </div>
                                 <div id="about4"> REGISTER </div>
                             </Row>
                         </Col>
-                        <Col xs={4} md={4}>
+                        <Col xs={5} md={5}>
                             <Row>
                                 <div id="about4"> TEL : 065-528-4556 </div>
                                 <div id="about3"> | </div>

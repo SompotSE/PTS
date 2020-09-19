@@ -1,18 +1,14 @@
 import React, { Component } from "react";
-import { Form, Container, Row, Button, Col, Column, } from 'react-bootstrap';
-
-const sty = {
-
-}
+import { Form, Container, Row, Button, Col } from 'react-bootstrap';
 
 export default class Request extends Component {
     render() {
         return (
             <Container>
-                <Row style={{marginTop:100}}>
+                <Row style={{ marginTop: "2%" }}>
                     <Col xs={1} md={1}></Col>
-                    <Col xs={10} md={10} style={{ border: "groove", padding: "5%"}}>
-                        <div style={{ textAlign: 'center', fontSize: '35', fontWeight: 'bold', paddingBottom: '3%'}}>REQUEST A QUOTE</div>
+                    <Col xs={10} md={10} style={{ border: "groove", padding: "5%" }}>
+                        <div style={{ textAlign: 'center', fontSize: '35', fontWeight: 'bold', paddingBottom: '3%' }}>REQUEST A QUOTE</div>
                         <div>Please fill out as much of the information below as possible. If you areunsure of your testing requirements, we will follow up anyway to help
 clarify. You also welcome to call us at +1979 690 2751 x2 (for sales) to discuss.</div>
                         <Form>
@@ -38,11 +34,11 @@ clarify. You also welcome to call us at +1979 690 2751 x2 (for sales) to discuss
                             </Form.Group>
                             <Form.Group controlId="formGridAddress">
                                 <Form.Label>Address</Form.Label>
-                                <Form.Control type="address" placeholder="Please enter your company adress" as="textarea" rows="5"/>
+                                <Form.Control type="address" placeholder="Please enter your company adress" as="textarea" rows="5" />
                             </Form.Group>
                             <Form.Group controlId="formGridDescribe">
                                 <Form.Label>Please describe your testing application.</Form.Label>
-                                <Form.Control type="describe" placeholder="What device(s) are being tested; what type of tests will be performed , etc." as="textarea" rows="5"/>
+                                <Form.Control type="describe" placeholder="What device(s) are being tested; what type of tests will be performed , etc." as="textarea" rows="5" />
                             </Form.Group>
                             <Button type="submit">SUBMIT</Button>
                         </Form>

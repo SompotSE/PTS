@@ -9,7 +9,7 @@ import banner6 from '../image/banner6.jpg';
 export default class Home extends Component {
     render() {
         return (
-            < Carousel >
+            < Carousel style={{marginLeft: "1%", marginRight: "1%", marginTop: "1%"}}>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"

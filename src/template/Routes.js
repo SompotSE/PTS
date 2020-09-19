@@ -5,6 +5,7 @@ import Home from "../content/Home";
 import About from "../content/About";
 // import Contact from "../content/RequestaQuote";
 import Contact from "../content/RequestaQuote1";
+import TestAndMeasur from "../content/Product/TestMeasur";
 
 export default class Routes extends Component {
     render() {
@@ -13,6 +14,7 @@ export default class Routes extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/About" component={About} />
                 <Route path="/Contact" component={Contact} />
+                <Route path="/Product/TestAndMeasurement" component={TestAndMeasur} />
             </Switch>
         );
     }
