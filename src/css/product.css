@@ -1,0 +1,19 @@
+#tab-product {
+    color: #495057;
+    text-decoration: blink;
+}
+
+#tab-product-active {
+    z-index: "2";
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #495057;
+    background-color: #ffffff;
+    border-color: #007bff;
+    border: 1px solid rgba(0,0,0,.125);
+}

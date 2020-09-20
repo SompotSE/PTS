@@ -1,0 +1,35 @@
+#header-test{
+    display: contents;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#header-sub{
+    font-size: 120%;
+    color: #0E589F;
+    font-weight: bold;
+    margin-right: 2%;
+    display: contents;
+}
+
+#header-row-sub{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#col-content{
+    padding: 1%;
+}
+
+#img-icon{
+    text-align: end;
+    margin: 1%;
+}
+
+#text-icon{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: auto;
+}

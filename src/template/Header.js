@@ -47,7 +47,6 @@ export default class Header extends Component {
     }
 
     render() {
-        console.log(window.location.pathname, "testtttttttttt");
         var sty_home = {};
         var sty_about = {};
         var sty_product = "nav-Header";

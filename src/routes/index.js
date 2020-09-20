@@ -5,7 +5,7 @@ import Home from "../content/Home";
 import About from "../content/About";
 import Contact from "../content/RequestaQuote";
 import Contact1 from "../content/RequestaQuote1";
-import TestAndMeasur from "../content/Product/TestMeasur";
+import Product from "../content/Product";
 
 
 export default () => (
@@ -15,7 +15,9 @@ export default () => (
         <Route exact path="/About" component={About} />
         <Route exact path="/Contact" component={Contact} />
         <Route exact path="/Contact1" component={Contact1} />
-        <Route exact path="/TestAndMeasur" component={TestAndMeasur} />
+        <Route exact path="/Product/TestAndMeasurement" component={Product} />
+        <Route exact path="/Product/Labpts" component={Product} />
+        <Route exact path="/Product/TestingSolutionIntegration" component={Product} />
 
     </Switch>
 )
