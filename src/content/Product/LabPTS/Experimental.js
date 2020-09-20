@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Container, Row, Button, Col, Image, column } from 'react-bootstrap';
+import {  Container, Row, Button, Col, Image } from 'react-bootstrap';
 import messageimage from '../../../image/ExperimentalSmartBatteryManagementSystemset.png';
 import { FaForward } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
