@@ -1,0 +1,10 @@
+#header-test{
+    display: contents;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#col-content{
+    padding: 1%;
+}

@@ -6,11 +6,32 @@ import '../css/product.css';
 
 import TestMeasur from '../content/Product/TestMeasur';
 import TestMeasurIcon from '../content/Product/TestMeasurIcon';
+import Labpts from '../content/Product/Labpts';
+import TestingSolution from '../content/Product/TestingSolution';
 
 var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
 var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
 
 export default class Product extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
+
+    subTabProduct() {
+        if (window.location.pathname === "/Product/TestAndMeasurement") {
+            return <TestMeasur />
+        } else if (window.location.pathname === "/Product/Labpts") {
+            return <Labpts />
+        } else if (window.location.pathname === "/Product/TestingSolutionIntegration") {
+            return <TestingSolution />
+        } else {
+            return <></>
+        }
+    }
+
     render() {
         var sty_sub_product1 = "tab-product";
         var sty_sub_product2 = "tab-product";
@@ -35,11 +56,15 @@ export default class Product extends Component {
                         </ListGroup>
                     </Col>
                     <Col sm={8} md={8} style={{ marginLeft: "2%", marginRight: "2%" }}>
-                        <TestMeasur />
+                        {this.subTabProduct()}
                     </Col>
                 </Row>
                 <Row>
-                    <TestMeasurIcon />
+                    {window.location.pathname === "/Product/TestAndMeasurement" ?
+                        <TestMeasurIcon />
+                        :
+                        <></>
+                    }
                 </Row>
             </div >
         )

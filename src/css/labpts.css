@@ -1,0 +1,24 @@
+#header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    border: groove;
+    padding: 1%;
+    text-align: center;
+    font-weight: bold;
+    color: #2467A9;
+    border-color: black;
+    border-width: thin;
+    margin: 2%;
+}
+
+#lab-content {
+    background-color: #2467A9;
+    color: aliceblue;
+    padding: 2%;
+    border-radius: 5%;
+    margin: 2%;
+    height: fit-content;
+    text-align: center; 
+}
