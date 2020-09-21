@@ -35,11 +35,11 @@
 
 #about3{
     color: aliceblue;
-    font-size: calc(0.2vh + 0.5vw);
+    font-size: calc(0.2vh + 0.75vw);
     margin-top: 1%;
-    margin-right: 1%;
-    margin-left: 1%;
     margin-bottom: 1%;
+    text-align: end;
+    padding-right: 2%;
 }
 
 #about4{
@@ -87,14 +87,15 @@
   }
 
 #link{
-    width: 6%;
-    height: 6%; 
+    width: 60%;
+    height: auto; 
     word-wrap: break-word;
     display: block;
-  }
+ }
 
-  #link2{
-    width: 30%;
-    height: 30%; 
+#link2{
+    width: 100%;
+    height: auto; 
     word-wrap: break-word;
-  }
+    display: block;
+}

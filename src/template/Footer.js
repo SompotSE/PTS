@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, Image } from 'react-bootstrap';
 
 import '../css/footer.css';
 import logo from '../image/imgFooter.png'
 import logoFacebook from '../image/facebook.png'
 import logoLine from '../image/line.png'
 import logoYoutube from '../image/youtube.png'
+
+import Facebook2 from '../image/facebook2.png'
 
 export default class Footer extends Component {
     render() {
@@ -30,7 +32,9 @@ export default class Footer extends Component {
                             />
                         </Col>
                         <Col xs={12} md={4} id="facebookFooter">
-                            <div class="fb-page" data-href="https://web.facebook.com/ptscombination" data-tabs="" data-width="180" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://web.facebook.com/ptscombination" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/ptscombination">PTS Combination</a></blockquote></div>
+                            <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
+                                <Image src={Facebook2} id="link2" fluid responsive />
+                            </a>
                         </Col>
                     </Row>
                 </Container>
@@ -38,46 +42,29 @@ export default class Footer extends Component {
                     <Row id="content">
                         <Col xs={6} md={6}>
                             <Row>
-                                <div id="about4"> LOGIN </div>
-                                <div id="about3"> | </div>
-                                <div id="about4"> REGISTER </div>
+                                <div id="about4"> LOGIN | REGISTER </div>
                             </Row>
                         </Col>
-                        <Col xs={5} md={5}>
+                        <Col xs={6} md={6}>
                             <Row>
-                                <div id="about4"> TEL : 065-528-4556 </div>
-                                <div id="about3"> | </div>
-                                <div id="about4"> EMAIL : siamsolar2017@gmail.com </div>
-                                <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer" id="link">
-                                    <img
-                                        src={logoFacebook}
-                                        width="100%"
-                                        height="100%"
-                                        className="d-inline-block align-top"
-                                        alt="logo"
-                                    />
-                                    {/* <Image src={logoFacebook} fluid/> */}
-                                </a>
-                                <a href="/" target="_blank" rel="noopener noreferrer" id="link">
-                                    <img
-                                        src={logoLine}
-                                        width="100%"
-                                        height="100%"
-                                        className="d-inline-block align-top"
-                                        alt="logo"
-                                    />
-                                    {/* <Image src={logoLine} fluid/> */}
-                                </a>
-                                <a href="/" target="_blank" rel="noopener noreferrer" id="link">
-                                    <img
-                                        src={logoYoutube}
-                                        width="100%"
-                                        height="100%"
-                                        className="d-inline-block align-top"
-                                        alt="logo"
-                                    />
-                                    {/* <Image src={logoYoutube} fluid/> */}
-                                </a>
+                                <Col xs={8} md={8} id="about3">
+                                    TEL : 065-528-4556 | EMAIL : siamsolar2017@gmail.com
+                                </Col>
+                                <Col xs={1} md={1}>
+                                    <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
+                                        <Image src={logoFacebook} id="link" fluid responsive />
+                                    </a>
+                                </Col>
+                                <Col xs={1} md={1}>
+                                    <a href="/" target="_blank" rel="noopener noreferrer">
+                                        <Image src={logoLine} id="link" fluid responsive />
+                                    </a>
+                                </Col>
+                                <Col xs={1} md={1}>
+                                    <a href="/" target="_blank" rel="noopener noreferrer">
+                                        <Image src={logoYoutube} id="link" fluid responsive />
+                                    </a>
+                                </Col>
                             </Row>
                         </Col>
                     </Row>
