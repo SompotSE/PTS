@@ -36,7 +36,7 @@ export default class Footer extends Component {
                 </Container>
                 <Container id="footer-black" fluid>
                     <Row id="content">
-                        <Col xs={7} md={7}>
+                        <Col xs={6} md={6}>
                             <Row>
                                 <div id="about4"> LOGIN </div>
                                 <div id="about3"> | </div>
