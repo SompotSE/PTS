@@ -5,17 +5,22 @@ import Header from "./template/Header";
 import Footer from "./template/Footer";
 import Routing from "./routes";
 
+import LiveChat from "./template/LiveChat";
+
 // import Home from "./content/Home";
 // import About from "./content/About";
 
 export default class App extends Component {
   render() {
     return (
-      <Router>
-        <Header />
+      <div>
+        <LiveChat />
+        <Router>
+          <Header />
           <Routing />
-        <Footer />
-      </Router>
+          <Footer />
+        </Router>
+      </div>
     );
   }
 }

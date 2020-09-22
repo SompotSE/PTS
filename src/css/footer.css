@@ -99,3 +99,29 @@
     word-wrap: break-word;
     display: block;
 }
+
+#live-chat{
+    width: 10%;
+    height: auto;
+    width: fit-content; 
+}
+
+.popover {
+    background-color: transparent;
+    border: transparent;
+}
+
+#row-popup{
+    justify-content: center;
+    margin: 3%;
+}
+
+#text-livechat{
+    opacity: 80%;
+    background-color: black;
+    color: aliceblue;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}

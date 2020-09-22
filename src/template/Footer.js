@@ -69,6 +69,7 @@ export default class Footer extends Component {
                         </Col>
                     </Row>
                 </Container>
+
             </div >
         )
     }

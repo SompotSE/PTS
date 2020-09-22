@@ -5,6 +5,13 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 import '../../css/testmeasur.css';
 
+var URL_OSCILL = "https://tmi.yokogawa.com/solutions/products/oscilloscopes/?_ga=2.170034723.2027970211.1600781934-350063830.1599052082";
+var URL_POWER = "https://tmi.yokogawa.com/solutions/products/power-analyzers/?_ga=2.217213205.2027970211.1600781934-350063830.1599052082";
+var URL_DATA = "https://tmi.yokogawa.com/solutions/products/data-acquisition-equipment/?_ga=2.215517204.2027970211.1600781934-350063830.1599052082";
+var URL_OPTICAL = "https://tmi.yokogawa.com/solutions/products/optical-measuring-instruments/?_ga=2.170503331.2027970211.1600781934-350063830.1599052082";
+var URL_SIGNAL = "https://tmi.yokogawa.com/solutions/products/generators-sources/?_ga=2.245474567.2027970211.1600781934-350063830.1599052082";
+var URL_PORTABLE = "https://tmi.yokogawa.com/solutions/products/portable-and-bench-instruments/?_ga=2.144804407.2027970211.1600781934-350063830.1599052082";
+
 export default class TestMeasur extends Component {
     render() {
         return (
@@ -16,7 +23,7 @@ export default class TestMeasur extends Component {
                     <Col md={4} id="col-content">
                         <Row>
                             <Col md={12} sm={12} id="header-row-sub">
-                                <div id="header-sub">Oscilloscopes</div> <FaExternalLinkAlt />
+                                <a href={URL_OSCILL} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Oscilloscopes</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
                         <Row>
@@ -35,7 +42,7 @@ export default class TestMeasur extends Component {
                     <Col md={4} id="col-content">
                         <Row>
                             <Col md={12} sm={12} id="header-row-sub">
-                                <div id="header-sub">Power Analyzers and Power Meters</div> <FaExternalLinkAlt />
+                                <a href={URL_POWER} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Power Analyzers and Power Meters</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
                         <Row>
@@ -50,7 +57,7 @@ export default class TestMeasur extends Component {
                     <Col md={4} id="col-content">
                         <Row>
                             <Col md={12} sm={12} id="header-row-sub">
-                                <div id="header-sub">Data Acquisition (DAQ)</div> <FaExternalLinkAlt />
+                                <a href={URL_DATA} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Data Acquisition (DAQ)</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
                         <Row>
@@ -66,7 +73,7 @@ export default class TestMeasur extends Component {
                     <Col md={4} id="col-content">
                         <Row>
                             <Col md={12} sm={12} id="header-row-sub">
-                                <div id="header-sub">Optical Test Equipment</div> <FaExternalLinkAlt />
+                                <a href={URL_OPTICAL} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Optical Test Equipment</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
                         <Row>
@@ -82,7 +89,7 @@ export default class TestMeasur extends Component {
                     <Col md={4} id="col-content">
                         <Row>
                             <Col md={12} sm={12} id="header-row-sub">
-                                <div id="header-sub">Signal Generators, Sources and Supplies</div> <FaExternalLinkAlt />
+                                <a href={URL_SIGNAL} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Signal Generators, Sources and Supplies</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
                         <Row>
@@ -98,7 +105,7 @@ export default class TestMeasur extends Component {
                     <Col md={4} id="col-content">
                         <Row>
                             <Col md={12} sm={12} id="header-row-sub">
-                                <div id="header-sub">Portable and Handheld Instruments</div> <FaExternalLinkAlt />
+                                <a href={URL_PORTABLE} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Portable and Handheld Instruments</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
                         <Row>

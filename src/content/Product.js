@@ -48,7 +48,7 @@ export default class Product extends Component {
                 <Row>
                     <Col sm={3} md={3}>
                         <ListGroup defaultActiveKey="/TestAndMeasurement" >
-                            <NavLink to="/Product/TestAndMeasurement" id={sty_sub_product1}><ListGroup.Item action id={sty_sub_product1}>Test & Measuremwnt Product</ListGroup.Item></NavLink>
+                            <NavLink to="/Product/TestAndMeasurement" id={sty_sub_product1}><ListGroup.Item action id={sty_sub_product1}>Test & Measurement Product</ListGroup.Item></NavLink>
                             <NavLink to="/Product/Labpts" id={sty_sub_product2}><ListGroup.Item action id={sty_sub_product2}>LABPTS+</ListGroup.Item></NavLink>
                             <ListGroup.Item action href={URL_DIGITAL} target="_blank">Digital Signal Processing and Control Engineering</ListGroup.Item>
                             <NavLink to="/Product/TestingSolutionIntegration" id={sty_sub_product3}><ListGroup.Item action id={sty_sub_product3}>Testing Solution Integration</ListGroup.Item></NavLink>

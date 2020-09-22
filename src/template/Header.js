@@ -122,7 +122,7 @@ export default class Header extends Component {
                                 <NavLink to="/" id="nav-Header" style={sty_home}>HOME</NavLink >
                                 <NavLink to="/About" id="nav-Header" style={sty_about}>ABOUT US</NavLink>
                                 <NavDropdown title="PRODUCT" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
-                                    <NavLink to="/Product/TestAndMeasurement" id="dopdown" style={sty_sub_product1}>Test & Measuremwnt Product</NavLink>
+                                    <NavLink to="/Product/TestAndMeasurement" id="dopdown" style={sty_sub_product1}>Test & Measurement Product</NavLink>
                                     <NavLink to="/Product/Labpts" id="dopdown" style={sty_sub_product2}>LABPTS+</NavLink>
                                     <a href={URL_DIGITAL} target="_blank" id="dopdown" rel="noopener noreferrer">Digital Signal Processing and Control Engineering</a>
                                     <NavLink to="/Product/TestingSolutionIntegration" id="dopdown" style={sty_sub_product3}>Testing Solution Integration</NavLink>
