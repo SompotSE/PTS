@@ -12,6 +12,10 @@ import image6 from '../../../image/img4.png';
 import image7 from '../../../image/img4.png';
 import image8 from '../../../image/img4.png';
 
+import uploadedFileLink1 from "../../../PDF/BrushedDC.pdf";
+import uploadedFileLink2 from "../../../PDF/LevelProcess.pdf";
+import uploadedFileLink3 from "../../../PDF/TempProcess.pdf";
+
 const headerContent = {
     backgroundColor: '#2467A9',
     width: '100%',
@@ -67,7 +71,11 @@ export default class ControlSystem extends Component {
                         </Row>
                         <Row xs={12} md={12} style={{ justifyContent: 'space-around' }}>
                             <NavLink to="/Product/Labpts/BrushedDC" style={featur}><Col xs={12} md={12} style={featur}>FEATURE DETAIL</Col></NavLink>
-                            <Col xs={12} md={12} style={downlode}><Button><FaDownload />Download Catalog PDF</Button></Col>
+                            <Col xs={12} md={12} style={downlode}>
+                                <a href={uploadedFileLink1} target="_blank" rel="noopener noreferrer" download="Brochure Brushed DC Motor Control System V1.0.pdf">
+                                    <Button><FaDownload />Download Catalog PDF</Button>
+                                </a>
+                            </Col>
                         </Row>
                     </Col>
                     <Col xs={12} md={6} lg={3} style={box}>
@@ -79,7 +87,11 @@ export default class ControlSystem extends Component {
                         </Row>
                         <Row xs={12} md={12} style={{ justifyContent: 'space-around' }}>
                             <NavLink to="/Product/Labpts/LevelProcess" style={featur}><Col xs={12} md={12} style={featur}>FEATURE DETAIL</Col></NavLink>
-                            <Col xs={12} md={12} style={downlode}><Button><FaDownload />Download Catalog PDF</Button></Col>
+                            <Col xs={12} md={12} style={downlode}>
+                                <a href={uploadedFileLink2} target="_blank" rel="noopener noreferrer" download="Brochure Level  Control System V1.0.pdf">
+                                    <Button><FaDownload />Download Catalog PDF</Button>
+                                </a>
+                            </Col>
                         </Row>
                     </Col>
                     <Col xs={12} md={6} lg={3} style={box}>
@@ -91,7 +103,11 @@ export default class ControlSystem extends Component {
                         </Row>
                         <Row xs={12} md={12} style={{ justifyContent: 'space-around' }}>
                             <NavLink to="/Product/Labpts/TempProcess" style={featur}><Col xs={12} md={12} style={featur}>FEATURE DETAIL</Col></NavLink>
-                            <Col xs={12} md={12} style={downlode}><Button><FaDownload />Download Catalog PDF</Button></Col>
+                            <Col xs={12} md={12} style={downlode}>
+                                <a href={uploadedFileLink3} target="_blank" rel="noopener noreferrer" download="Brochure Temp Process  Control System V1.0.pdf">
+                                    <Button><FaDownload />Download Catalog PDF</Button>
+                                </a>
+                            </Col>
                         </Row>
                     </Col>
                     <Col xs={12} md={6} lg={3} style={box}>

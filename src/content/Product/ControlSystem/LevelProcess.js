@@ -3,6 +3,8 @@ import { Container, Row, Button, Col, Image } from 'react-bootstrap';
 import messageimage from '../../../image/LevelProcessControlSystem_V1.02.png';
 import { FaDownload } from "react-icons/fa";
 
+import uploadedFileLink from "../../../PDF/LevelProcess.pdf";
+
 export default class Request extends Component {
     render() {
         return (
@@ -18,7 +20,9 @@ export default class Request extends Component {
                         </Row>
                         <Row xs={12} md={12} style={{ justifyContent: 'space-around', }}>
                             {/* <Col xs={12} md={12} style={{ justifyContent: 'center', alignItems: 'bottum-end' }}> */}
-                            <Button><FaDownload />          Download Catalog PDF</Button>
+                            <a href={uploadedFileLink} target="_blank" rel="noopener noreferrer" download="Brochure Level  Control System V1.0.pdf">
+                                <Button><FaDownload />          Download Catalog PDF</Button>
+                            </a>
                             {/* </Col> */}
                         </Row>
                     </Col>

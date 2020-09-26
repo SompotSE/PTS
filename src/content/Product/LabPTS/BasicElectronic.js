@@ -4,6 +4,8 @@ import messageimage from '../../../image/messageImage_1595235288133.jpg';
 import { FaForward } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
 
+import uploadedFileLink from "../../../PDF/BasicElectronic.pdf"
+
 export default class Request extends Component {
     render() {
         return (
@@ -50,7 +52,9 @@ export default class Request extends Component {
                         </Row>
                         <Row xs={12} md={12} style={{ justifyContent: 'space-around', }}>
                             {/* <Col xs={12} md={12} style={{ justifyContent: 'center', alignItems: 'bottum-end' }}> */}
-                            <Button><FaDownload />          Download Catalog PDF</Button>
+                            <a href={uploadedFileLink} target="_blank" rel="noopener noreferrer" download="Brohure BASIC ELECRONICS CIRCUITS LAB KITS.pdf">
+                                <Button><FaDownload />          Download Catalog PDF</Button>
+                            </a>
                             {/* </Col> */}
                         </Row>
                     </Col>

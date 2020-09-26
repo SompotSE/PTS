@@ -4,6 +4,8 @@ import messageimage from '../../../image/messageImage_1595269038746.jpg';
 import { FaForward } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
 
+import uploadedFileLink from "../../../PDF/EmbeddedLearning.pdf"
+
 export default class Request extends Component {
     render() {
         return (
@@ -58,7 +60,9 @@ export default class Request extends Component {
                         </Row>
                         <Row xs={12} md={12} style={{ justifyContent: 'space-around', }}>
                             {/* <Col xs={12} md={12} style={{ justifyContent: 'center', alignItems: 'bottum-end' }}> */}
-                            <Button><FaDownload />          Download Catalog PDF</Button>
+                            <a href={uploadedFileLink} target="_blank" rel="noopener noreferrer" download="Brochure xMCU Development Board V1.0_s.pdf">
+                                <Button><FaDownload />          Download Catalog PDF</Button>
+                            </a>
                             {/* </Col> */}
                         </Row>
                     </Col>
