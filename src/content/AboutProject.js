@@ -55,20 +55,18 @@ export default class TestMeasurIcon extends Component {
 
     project_for() {
         return this.state.dataIcon.map((data) => {
-            return <Col md={4} lg={4} xs={6} style={{padding: "1%"}}>
+            return <Col md={4} lg={4} xs={6} style={{ padding: "1%" }}>
                 <Row>
-                    <Col ><Image src={data.icon} fluid /></Col>
+                    <Image src={data.icon} fluid />
                 </Row>
-                <Row>
-                    <Col id="projectDetail">{data.text}</Col>
-                </Row>
+                {window.innerWidth < 768 ?
+                    <Row id="projectDetail" style={{ fontSize: "50%" }}>{data.text}</Row>
+                    : window.innerWidth < 1025 ?
+                        <Row id="projectDetail" style={{ fontSize: "60%" }}>{data.text}</Row>
+                    :
+                        <Row id="projectDetail" style={{ fontSize: "100%" }}>{data.text}</Row>
+                }
             </Col>
-            // return <Card style={{ width: '18rem' }}>
-            //     <Card.Img variant="top" src={data.icon} />
-            //     <Card.Body>
-            //         <Card.Title>{data.text}</Card.Title>
-            //     </Card.Body>
-            // </Card>
         });
     }
 
