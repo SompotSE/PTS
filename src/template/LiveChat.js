@@ -275,20 +275,20 @@ export default class Footer extends Component {
             >
                 <PopoverBody>
                     <Row id="row-popup">
-                        <Col md={6} xs={8} style={textLiveChat}>Line Chat</Col>
-                        <Col md={6} xs={4} style={iconFooter}><Image src={logoLine} id="Popover-top" style={{ width: "40%" }} fluid responsive /></Col>
+                        <Col md={6} xs={6} style={textLiveChat}>Line Chat</Col>
+                        <Col md={6} xs={6} style={iconFooter}><Image src={logoLine} id="Popover-top" style={{ width: "40%" }} fluid responsive /></Col>
                     </Row>
                     <Row id="row-popup">
-                        <Col md={6} xs={8} style={textLiveChat}>Tel. Phone</Col>
-                        <Col md={6} xs={4} style={iconFooter}>
+                        <Col md={6} xs={6} style={textLiveChat}>Tel. Phone</Col>
+                        <Col md={6} xs={6} style={iconFooter}>
                             <a href="tel:+66831885535">
                                 <Image src={logoPhone} id="Popover-top" style={{ width: "40%" }} fluid responsive />
                             </a>
                         </Col>
                     </Row>
                     <Row id="row-popup">
-                        <Col md={6} xs={8} style={textLiveChat}>Request</Col>
-                        <Col md={6} xs={4} style={iconFooter}>
+                        <Col md={6} xs={6} style={textLiveChat}>Request</Col>
+                        <Col md={6} xs={6} style={iconFooter}>
                             <NavLink to="/Request">
                                 <Image src={logoKa} id="Popover-top" style={{ width: "40%" }} fluid responsive />
                             </NavLink>
