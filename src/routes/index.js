@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from "../content/Home";
 import About from "../content/About";
 import Contact from "../content/RequestaQuote1";
-import Contact1 from "../content/RequestaQuote";
+import Request from "../content/RequestaQuote";
 import Product from "../content/Product";
 
 import BasicElectronic from "../content/Product/LabPTS/BasicElectronic";
@@ -23,7 +23,7 @@ export default () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/About" component={About} />
         <Route exact path="/Contact" component={Contact} />
-        <Route exact path="/Contact1" component={Contact1} />
+        <Route exact path="/Request" component={Request} />
         <Route exact path="/Product/TestAndMeasurement" component={Product} />
         <Route exact path="/Product/Labpts" component={Product} />
         <Route exact path="/Product/TestingSolutionIntegration" component={Product} />

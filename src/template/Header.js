@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavDropdown, Col, Row, Container, Image } from 'react-bootstrap';
 // import {Container} from 'react-bootstrap';
 
-
 import { NavLink } from 'react-router-dom';
 // import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import logo from '../image/logoPTS.png'
