@@ -9,6 +9,11 @@ import TestMeasurIcon from '../content/Product/TestMeasurIcon';
 import Labpts from '../content/Product/Labpts';
 import TestingSolution from '../content/Product/TestingSolution';
 
+var URL_INSTRUMENT = "https://www.yokogawa.com/solutions/products-platforms/field-instruments/";
+var URL_ACQUISITION = "https://www.yokogawa.com/solutions/products-platforms/data-acquisition/";
+var URL_CONTRROL = "https://www.yokogawa.com/solutions/products-platforms/control-system/";
+var URL_METROLOGICAL1 = "https://novalynx.com/store/pc/home2.asp";
+
 var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
 var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
 
@@ -45,20 +50,37 @@ export default class Product extends Component {
         }
         return (
             <div style={{ marginTop: "1%", marginLeft: "10%", marginRight: "10%" }}>
-                <Row>
-                    <Col sm={3} md={3}>
-                        <ListGroup defaultActiveKey="/TestAndMeasurement" >
-                            <NavLink to="/Product/TestAndMeasurement" id={sty_sub_product1}><ListGroup.Item action id={sty_sub_product1}>Test & Measurement Product</ListGroup.Item></NavLink>
-                            <NavLink to="/Product/Labpts" id={sty_sub_product2}><ListGroup.Item action id={sty_sub_product2}>LABPTS+</ListGroup.Item></NavLink>
-                            <ListGroup.Item action href={URL_DIGITAL} target="_blank">Digital Signal Processing and Control Engineering</ListGroup.Item>
-                            <NavLink to="/Product/TestingSolutionIntegration" id={sty_sub_product3}><ListGroup.Item action id={sty_sub_product3}>Testing Solution Integration</ListGroup.Item></NavLink>
-                            <ListGroup.Item action href={URL_METROLOGICAL} target="_blank">Metrological Sensors & Systems</ListGroup.Item>
-                        </ListGroup>
-                    </Col>
-                    <Col sm={8} md={8} style={{ marginLeft: "2%", marginRight: "2%" }}>
-                        {this.subTabProduct()}
-                    </Col>
-                </Row>
+                {window.location.pathname === "/Product/TestAndMeasurement" ?
+                    <Row>
+                        <Col sm={3} md={3}>
+                            <ListGroup defaultActiveKey="/TestAndMeasurement" >
+                                <NavLink to="/Product/TestAndMeasurement" id={sty_sub_product1}><ListGroup.Item action id={sty_sub_product1}>Test & Measurement Product</ListGroup.Item></NavLink>
+                                <ListGroup.Item action href={URL_INSTRUMENT} target="_blank">Field Instrument</ListGroup.Item>
+                                <ListGroup.Item action href={URL_ACQUISITION} target="_blank">Data Acquisition (DAQ)</ListGroup.Item>
+                                <ListGroup.Item action href={URL_CONTRROL} target="_blank">Control System</ListGroup.Item>
+                                <ListGroup.Item action href={URL_METROLOGICAL1} target="_blank">Metrological Sensors & Systems</ListGroup.Item>
+                            </ListGroup>
+                        </Col>
+                        <Col sm={8} md={8} style={{ marginLeft: "2%", marginRight: "2%" }}>
+                            {this.subTabProduct()}
+                        </Col>
+                    </Row>
+                    :
+                    <Row>
+                        <Col sm={3} md={3}>
+                            <ListGroup defaultActiveKey="/TestAndMeasurement" >
+                                <NavLink to="/Product/TestAndMeasurement" id={sty_sub_product1}><ListGroup.Item action id={sty_sub_product1}>Test & Measurement Product</ListGroup.Item></NavLink>
+                                <NavLink to="/Product/Labpts" id={sty_sub_product2}><ListGroup.Item action id={sty_sub_product2}>LABPTS+</ListGroup.Item></NavLink>
+                                <ListGroup.Item action href={URL_DIGITAL} target="_blank">Digital Signal Processing and Control Engineering</ListGroup.Item>
+                                <NavLink to="/Product/TestingSolutionIntegration" id={sty_sub_product3}><ListGroup.Item action id={sty_sub_product3}>Testing Solution Integration</ListGroup.Item></NavLink>
+                                <ListGroup.Item action href={URL_METROLOGICAL} target="_blank">Metrological Sensors & Systems</ListGroup.Item>
+                            </ListGroup>
+                        </Col>
+                        <Col sm={8} md={8} style={{ marginLeft: "2%", marginRight: "2%" }}>
+                            {this.subTabProduct()}
+                        </Col>
+                    </Row>
+                }
                 <Row>
                     {window.location.pathname === "/Product/TestAndMeasurement" ?
                         <TestMeasurIcon />

@@ -3,13 +3,15 @@ import { Container, Image, Col, Row } from 'react-bootstrap';
 import map from '../image/businessOverview.png';
 import '../css/about.css';
 
+import AboutProject from './AboutProject';
+
 const busContent = {
     margin: "2%",
     padding: "3%",
     marginLeft: "3%",
     height: "fit-content",
     backgroundColor: "aliceblue",
-    opacity: "85%",
+    opacity: "100%",
     borderRadius: "5%"
 };
 const contentDetail = {
@@ -32,7 +34,7 @@ export default class About extends Component {
                         </Col>
                         <Col md={5} xs={12}>
                             <div style={busContent}>
-                                <p style={contentDetail}>  
+                                <p style={contentDetail}>
                                     PTS COMBINATION Co., Ltd. Is committed to providing
                                     complete solution to general research test and monitoring
                                     equipment needs of researchers, academicians, evaluators
@@ -50,6 +52,12 @@ export default class About extends Component {
                         </Col>
                     </Row>
                 </div>
+
+                <div id="project">Project Reference</div>
+                <Container>
+                    <AboutProject />
+                </Container>
+
             </Container>
         )
     }
