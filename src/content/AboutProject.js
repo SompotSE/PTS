@@ -12,6 +12,7 @@ import icon06 from '../image/p6.jpg';
 import icon07 from '../image/p7.png';
 import icon08 from '../image/p8.png';
 
+var projectDetail = {};
 export default class TestMeasurIcon extends Component {
     constructor(props) {
         super(props);
@@ -57,20 +58,54 @@ export default class TestMeasurIcon extends Component {
         return this.state.dataIcon.map((data) => {
             return <Col md={4} lg={4} xs={6} style={{ padding: "1%" }}>
                 <Row>
-                    <Image src={data.icon} fluid />
+                    <Col><Image src={data.icon} fluid /></Col>
                 </Row>
-                {window.innerWidth < 768 ?
-                    <Row id="projectDetail" style={{ fontSize: "50%" }}>{data.text}</Row>
-                    : window.innerWidth < 1025 ?
-                        <Row id="projectDetail" style={{ fontSize: "60%" }}>{data.text}</Row>
-                    :
-                        <Row id="projectDetail" style={{ fontSize: "100%" }}>{data.text}</Row>
-                }
+                <Row style={projectDetail}>{data.text}</Row>
             </Col>
         });
     }
 
     render() {
+        if (window.innerWidth < 768) {
+            projectDetail = {
+                color: "aliceblue",
+                backgroundColor: "#2467A9",
+                textAlign: "center",
+                marginTop: "3%",
+                padding: "4%",
+                justifyContent: "center",
+                height: "20%",
+                display: "flex",
+                alignItems: "center",
+                fontSize: "50%"
+            };
+        } else if (window.innerWidth < 1025) {
+            projectDetail = {
+                color: "aliceblue",
+                backgroundColor: "#2467A9",
+                textAlign: "center",
+                marginTop: "3%",
+                padding: "4%",
+                justifyContent: "center",
+                height: "20%",
+                display: "flex",
+                alignItems: "center",
+                fontSize: "60%"
+            };
+        } else {
+            projectDetail = {
+                color: "aliceblue",
+                backgroundColor: "#2467A9",
+                textAlign: "center",
+                marginTop: "3%",
+                padding: "4%",
+                justifyContent: "center",
+                height: "20%",
+                display: "flex",
+                alignItems: "center",
+                fontSize: "100%"
+            };
+        }
         return (
             <div>
                 <Row>

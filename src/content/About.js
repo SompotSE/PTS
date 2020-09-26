@@ -41,7 +41,6 @@ export default class About extends Component {
     // }
 
     render() {
-        console.log(window.innerWidth, " window.innerWidth");
         if(window.innerWidth < 768 ) {
             contentDetail = {
                 fontSize: '100%'
@@ -99,9 +98,9 @@ export default class About extends Component {
                 </div>
 
                 <div style={project}>Project Reference</div>
-                {/* <Container> */}
+                <Container>
                     <AboutProject />
-                {/* </Cosntainer> */}
+                </Container>
 
             </Container>
         )
