@@ -10,6 +10,8 @@ import logoLine from '../image/buFooterLine.png';
 import logoPhone from '../image/buFooterTel.png';
 import logoKa from '../image/buFooterKa.png';
 
+// import { Container, Button, Link } from 'react-floating-action-button'
+
 const textLiveChat = {
     //opacity: "50%",
     backgroundColor: "rgba(0, 0, 0, 0.7)",

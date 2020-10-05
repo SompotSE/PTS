@@ -1,13 +1,22 @@
 import React, { Component } from "react";
-import { Col, Row, Container, Image } from 'react-bootstrap';
+import { Col, Row, Container, Image, Carousel } from 'react-bootstrap';
 
 import '../css/footer.css';
-import logo from '../image/imgFooter.png'
+import logo1 from '../image/logo/logo1.png';
+import logo2 from '../image/logo/logo2.png';
+import logo3 from '../image/logo/logo3.png';
+import logo4 from '../image/logo/logo4.png';
+
 import logoFacebook from '../image/facebook.png'
 import logoLine from '../image/line.png'
 import logoYoutube from '../image/youtube.png'
 
 import Facebook2 from '../image/facebook2.png'
+
+var URL1 = "http://www.pg-intergroup.com/";
+var URL2 = "https://www.dspace.com/en/pub/home.cfm";
+var URL3 = "https://novalynx.com/store/pc/home2.asp";
+var URL4 = "https://www.yokogawa.com/th";
 
 export default class Footer extends Component {
     render() {
@@ -24,12 +33,48 @@ export default class Footer extends Component {
                             to government and private research facilities. </div>
                         </Col>
                         <Col xs={12} md={4} id="imgFooter">
-                            <img
-                                src={logo}
-                                width="60%"
-                                className="d-inline-block align-top"
-                                alt="logo"
-                            />
+                            < Carousel controls={false} indicators={false}>
+                                <Carousel.Item>
+                                    <a href={URL1} target="_blank" id="dopdown" rel="noopener noreferrer">
+                                        <img
+                                            src={logo1}
+                                            width="60%"
+                                            className="d-inline-block align-top"
+                                            alt="logo"
+                                        />
+                                    </a>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <a href={URL2} target="_blank" id="dopdown" rel="noopener noreferrer">
+                                        <img
+                                            src={logo2}
+                                            width="60%"
+                                            className="d-inline-block align-top"
+                                            alt="logo"
+                                        />
+                                    </a>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <a href={URL3} target="_blank" id="dopdown" rel="noopener noreferrer">
+                                        <img
+                                            src={logo3}
+                                            width="60%"
+                                            className="d-inline-block align-top"
+                                            alt="logo"
+                                        />
+                                    </a>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <a href={URL4} target="_blank" id="dopdown" rel="noopener noreferrer">
+                                        <img
+                                            src={logo4}
+                                            width="60%"
+                                            className="d-inline-block align-top"
+                                            alt="logo"
+                                        />
+                                    </a>
+                                </Carousel.Item>
+                            </Carousel >
                         </Col>
                         <Col xs={12} md={4} id="facebookFooter">
                             <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
