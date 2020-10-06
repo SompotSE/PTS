@@ -128,3 +128,8 @@
     align-items: center;
     font-weight: bolder;
 }
+
+i.icon {
+    margin: 0rem 0 0; 
+    height: 0em;
+}

@@ -101,7 +101,7 @@ export default class Footer extends Component {
                                     </a>
                                 </Col>
                                 <Col xs={1} md={1}>
-                                    <a href="/" target="_blank" rel="noopener noreferrer">
+                                    <a href="http://line.me/ti/p/0831885535" target="_blank" rel="noopener noreferrer">
                                         <Image src={logoLine} id="link" fluid responsive />
                                     </a>
                                 </Col>
