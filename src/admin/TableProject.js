@@ -33,14 +33,13 @@ export default class TableProject extends Component {
             }
         ];
 
-        this.onEdit = this.onEdit.bind(this);
         this.onDelete = this.onDelete.bind(this);
 
         this.columns = [
             {
-                key: "project_id",
+                key: "item",
                 text: "",
-                className: "project_id",
+                className: "item",
                 width: 50,
                 align: "center",
                 sortable: true,
@@ -71,8 +70,8 @@ export default class TableProject extends Component {
                 cell: record => {
                     return (
                         <div>
-                            <Button variant="outline-primary" onClick={() => this.onEdit(record.around)} style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button>
-                            <Button variant="outline-danger" fill onClick={() => this.onDelete(record.around)} style={{ color: "#35526F", marginRight: "0.5em" }}><FaTrashAlt /></Button>
+                            <NavLink to={`/EditProject/${record.project_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
+                            <Button variant="outline-danger" fill onClick={() => this.onDelete(record.project_id)} style={{ color: "#35526F", marginRight: "0.5em" }}><FaTrashAlt /></Button>
                         </div>
                     );
                 }
@@ -121,12 +120,14 @@ export default class TableProject extends Component {
         ]
     }
 
-    onEdit() {
-
-    }
-
-    onDelete() {
-
+    async onDelete(id) {
+        console.log(id, " id delete");
+        var url_project = ip + "/pts/DeleteProject.php?id=" + id;
+        const project = await axios.get(url_project);
+        const data_project = project.data;
+        if (data_project === "delete project successfully") {
+            window.location.replace('/TableProject', false);
+        }
     }
 
     async componentDidMount() {
@@ -138,8 +139,26 @@ export default class TableProject extends Component {
         });
     }
 
+    itemProject() {
+        for (let i = 0; i < this.state.dataIcon.length; i++) {
+            this.records.push(
+                {
+                    "item": i + 1,
+                    "project_id": this.state.dataIcon[i].project_id,
+                    "project_name": this.state.dataIcon[i].project_name,
+                    "project_description": this.state.dataIcon[i].project_description,
+                    "project_img": this.state.dataIcon[i].project_img,
+                    "project_sqe": this.state.dataIcon[i].project_sqe,
+                    "project_status": this.state.dataIcon[i].project_status
+                }
+            );
+        }
+    }
+
     render() {
-        this.records = this.state.dataIcon;
+        this.records = [];
+        this.itemProject();
+        // this.records = this.state.dataIcon;
         return (
             <Container>
                 <Row style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>

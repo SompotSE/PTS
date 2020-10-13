@@ -6,7 +6,8 @@ import '../css/about.css';
 // import { FaPlusCircle } from "react-icons/fa";
 
 var projectDetail = {};
-var ip = "http://localhost";
+// var ip = "http://localhost";
+var ip = "http://aiavs.net:80";
 
 export default class TestMeasurIcon extends Component {
     constructor(props) {
@@ -17,7 +18,7 @@ export default class TestMeasurIcon extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetProject.php";
+        var url_project = ip + "/pts/GetProject.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({
@@ -27,7 +28,8 @@ export default class TestMeasurIcon extends Component {
 
     project_for() {
         return this.state.dataIcon.map((data) => {
-            var img = require('../image/' + data.project_img );
+            var img = 'http://aiavs.net/pts/project/' + data.project_img;
+            // var img = require('../image/' + data.project_img );
             return <Col md={4} lg={4} xs={6} style={{ padding: "1%" }}>
                 <Row>
                     <Col><Image src={img} alt="React" fluid /></Col>

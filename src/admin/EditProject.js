@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
-// import axios from 'axios';
-// import { FaVrCardboard } from "react-icons/fa";
+import axios from 'axios';
 // var ip2 = "http://localhost";
 var ip = "http://aiavs.net:80";
 
@@ -11,8 +10,11 @@ export default class AddProject extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: 0,
             name: "",
             desc: "",
+            img: "",
+            img_path: "",
             files: []
         };
 
@@ -26,21 +28,45 @@ export default class AddProject extends Component {
         this.setState({ files: files })
     }
 
+    async componentDidMount() {
+        var url_project = ip + "/pts/GetEditProject.php?project_id=" + this.props.match.params.id;
+        const project = await axios.get(url_project);
+        const data_project = project.data;
+        console.log(data_project, " data_project");
+        this.setState({
+            id: data_project.project_id,
+            name: data_project.project_name,
+            desc: data_project.project_description,
+            img: data_project.project_img,
+            img_path: "http://aiavs.net/pts/project/" + data_project.project_img,
+        });
+    }
+
     async onSubmit() {
         if (this.state.name === "") {
             alert("Please enter a project name.");
         } else if (this.state.desc === "") {
             alert("Please enter a project description.");
-        } else if (this.state.files.length === 0) {
-            alert("Please select a image.");
         } else {
-            const save_project = {
-                name: this.state.name,
-                desc: this.state.desc,
-                img: this.state.files[0].base64
+            var save_project;
+            if(this.state.files.length !== 0) {
+                save_project = {
+                    id: this.state.id,
+                    name: this.state.name,
+                    desc: this.state.desc,
+                    img_name: this.state.img,
+                    img: this.state.files[0].base64
+                }
+            } else {
+                save_project = {
+                    id: this.state.id,
+                    name: this.state.name,
+                    desc: this.state.desc,
+                    img_name: this.state.img,
+                    img: ""
+                }
             }
-
-            const response = await fetch(ip + '/pts/SaveProject.php', {
+            const response = await fetch(ip + '/pts/SaveEditProject.php', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
@@ -49,32 +75,8 @@ export default class AddProject extends Component {
                 body: JSON.stringify(save_project)
             });
             const res = await response.text();
-            if(res){ }
+            if (res) { }
             window.location.replace('/TableProject', false);
-
-            //   fetch('http://localhost:3000/', ip + '/pts/SaveProject.php', {
-            //     method : 'post',
-            //     mode:    'no-cors',
-            //     headers: {
-            //       'Content-Type': 'application/json',  // sent request
-            //       'Accept':       'application/json'   // expected data sent back
-            //     },
-            //     body: JSON.stringify({min: 1, max: 100})
-            // })
-            //   .then((res) => res )
-            //   .then((data) => console.log(data))
-            //   .catch((error) => console.log(error))
-
-            // axios.post(ip + '/pts/SaveProject.php', save_project, { mode: 'no-cors' })
-            //     .then(function (res) {
-            //         console.log(res, " res");
-            //         if (res.data === 'save project successfully') {
-            //             window.location.replace('/TableProject', false);
-            //         }
-            //     })
-            //     .catch(function (err) {
-            //         console.log('error');
-            //     })
         }
     }
 
@@ -101,7 +103,7 @@ export default class AddProject extends Component {
             <Container>
                 <Row style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>
                     <Col style={{ textAlign: "center" }}>
-                        <h4 >App Project</h4>
+                        <h4 >Edit Project</h4>
                     </Col>
                 </Row>
                 <Row style={{ marginLeft: "5%", marginRight: "5%" }}>
@@ -109,12 +111,12 @@ export default class AddProject extends Component {
                         <Form>
                             <Form.Group controlId="formGroupName">
                                 <Form.Label style={{ fontWeight: "bold" }}>Name Project</Form.Label>
-                                <Form.Control size="lg" type="text" placeholder="Name Project" name="name" onChange={this.onChangeName} />
+                                <Form.Control size="lg" type="text" placeholder="Name Project" name="name" onChange={this.onChangeName} value={this.state.name} />
                             </Form.Group>
 
                             <Form.Group controlId="formGroupDescription">
                                 <Form.Label style={{ fontWeight: "bold" }}>Description</Form.Label>
-                                <Form.Control as="textarea" rows="3" placeholder="Description" name="desc" onChange={this.onChangeDesc} />
+                                <Form.Control as="textarea" rows="3" placeholder="Description" name="desc" onChange={this.onChangeDesc} value={this.state.desc} />
                             </Form.Group>
                         </Form>
                     </Col>
@@ -133,7 +135,12 @@ export default class AddProject extends Component {
                         {this.state.files.map((file, i) => {
                             return <Image key={i} src={file.base64} width='30%' alt="car pictures" />
                         })}
-                        <Image src="" alt="" />
+                        {
+                            (this.state.files.length === 0) ?
+                                <Image src={this.state.img_path} width='30%' alt={this.state.img_path} />
+                                :
+                                <Image src="" alt="" />
+                        }
                     </Col>
                 </Row>
                 <Row style={{ marginBottom: "5%", marginLeft: "5%", marginRight: "5%", marginTop: "2%" }}>
