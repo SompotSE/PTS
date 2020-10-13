@@ -1,66 +1,38 @@
 import React, { Component } from "react";
 import { Row, Col, Image } from 'react-bootstrap';
-
+import axios from 'axios';
 import '../css/about.css';
 
-import icon01 from '../image/p1.png';
-import icon02 from '../image/p2.png';
-import icon03 from '../image/p3.png';
-import icon04 from '../image/p4.png';
-import icon05 from '../image/p5.png';
-import icon06 from '../image/p6.jpg';
-import icon07 from '../image/p7.png';
-import icon08 from '../image/p8.png';
+// import { FaPlusCircle } from "react-icons/fa";
 
 var projectDetail = {};
+var ip = "http://localhost";
+
 export default class TestMeasurIcon extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataIcon: [
-                {
-                    icon: icon01,
-                    text: "RAILWAY ELECTRIC TRACTION SIMULATION SYSTEM"
-                },
-                {
-                    icon: icon02,
-                    text: "ELECTRIC DRIVE SIMULATION SYSTEM"
-                },
-                {
-                    icon: icon03,
-                    text: "RENEWABLE ENGERY LABORATORY"
-                },
-                {
-                    icon: icon04,
-                    text: "DYNAMOMETER TEST  BENCH FOR RESEARCH"
-                },
-                {
-                    icon: icon05,
-                    text: "DISTRIBUTED CONTROL SYSTEM"
-                },
-                {
-                    icon: icon06,
-                    text: "HIGH SPEED DYNAMOMETER TEST  BENCH FOR INDUSTRIAL"
-                },
-                {
-                    icon: icon07,
-                    text: "SOLAR RADIATION MAPS OF THAILAND"
-                },
-                {
-                    icon: icon08,
-                    text: "INDUSTRIAL 4.0"
-                }
-            ]
+            dataIcon: [ ]
         }
+    }
+
+    async componentDidMount() {
+        var url_project = ip + "/PTS/GetProject.php";
+        const project = await axios.get(url_project);
+        const data_project = project.data;
+        this.setState({
+            dataIcon: data_project
+        });
     }
 
     project_for() {
         return this.state.dataIcon.map((data) => {
+            var img = require('../image/' + data.project_img );
             return <Col md={4} lg={4} xs={6} style={{ padding: "1%" }}>
                 <Row>
-                    <Col><Image src={data.icon} fluid /></Col>
+                    <Col><Image src={img} alt="React" fluid /></Col>
                 </Row>
-                <Row style={projectDetail}>{data.text}</Row>
+                <Row style={projectDetail}>{data.project_name}</Row>
             </Col>
         });
     }
@@ -110,6 +82,9 @@ export default class TestMeasurIcon extends Component {
             <div>
                 <Row>
                     {this.project_for()}
+                    {/* <Col md={4} lg={4} xs={6} style={{ padding: "1%",textAlign: "center", alignItems: "center", display: "flex", justifyContent: "center" }}>
+                            <FaPlusCircle style={{ width: "30%", height: "30%"}} />
+                    </Col> */}
                 </Row>
             </div >
         )

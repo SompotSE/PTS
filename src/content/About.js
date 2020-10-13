@@ -41,11 +41,11 @@ export default class About extends Component {
     // }
 
     render() {
-        if(window.innerWidth < 768 ) {
+        if (window.innerWidth < 768) {
             contentDetail = {
                 fontSize: '100%'
             };
-        } else if(window.innerWidth < 1025 ) {
+        } else if (window.innerWidth < 1025) {
             contentDetail = {
                 fontSize: "calc(0.65vh + 0.95vw)"
             };

@@ -6,6 +6,10 @@ import About from "../content/About";
 import Contact from "../content/RequestaQuote1";
 import Request from "../content/RequestaQuote";
 import Product from "../content/Product";
+import Login from "../admin/Login";
+import AddProject from "../admin/AddProject";
+import TableProject from "../admin/TableProject";
+import TableCover from "../admin/TableCover";
 
 import BasicElectronic from "../content/Product/LabPTS/BasicElectronic";
 import BasicAnalog from "../content/Product/LabPTS/BasicAnalog";
@@ -27,6 +31,10 @@ export default () => (
         <Route exact path="/Product/TestAndMeasurement" component={Product} />
         <Route exact path="/Product/Labpts" component={Product} />
         <Route exact path="/Product/TestingSolutionIntegration" component={Product} />
+        <Route exact path="/Login" component={Login} />
+        <Route exact path="/AddProject" component={AddProject} />
+        <Route exact path="/TableProject" component={TableProject} />
+        <Route exact path="/TableCover" component={TableCover} />
 
         <Route exact path="/Product/Labpts/BasicElectronic" component={BasicElectronic} />
         <Route exact path="/Product/Labpts/BasicAnalog" component={BasicAnalog} />

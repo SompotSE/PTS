@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Col, Row, Image } from 'react-bootstrap';
+// import { OverlayTrigger , Tooltip } from 'react-bootstrap';
 
 // import { Popover, PopoverBody } from "reactstrap";
 // import { NavLink } from 'react-router-dom';
@@ -378,29 +378,36 @@ export default class Footer extends Component {
                     size={60}
                     onClick={() => this.setState({ isOpen: !this.state.isOpen })}
                 />
+
                 <ChildButton
-                    icon={<FaPhoneAlt style={{ fontSize: 25, color: "aliceblue" }} />}
+                    icon={
+                        // <OverlayTrigger key="left" defaultShow={true} placement="left" overlay={<Tooltip id="tooltip-left"> <strong>Tel Phone</strong></Tooltip>}>
+                            <FaPhoneAlt style={{ fontSize: 25, color: "aliceblue" }} />
+                        // </OverlayTrigger>
+                        }
                     background='teal'
                     size={50}
-                    onClick={() => { window.open("tel:+66831885535");}}
+                    onClick={() => { window.open("tel:+66831885535"); }}
                 />
+
+
                 <ChildButton
-                    icon={<LineIcon name="line"style={{ fontSize: 25, color: "aliceblue" }} />}
+                    icon={<LineIcon name="line" style={{ fontSize: 25, color: "aliceblue" }} />}
                     background='#00C300'
                     size={50}
-                    onClick={() => {window.open("http://line.me/ti/p/0831885535", "_blank" );}}
+                    onClick={() => { window.open("http://line.me/ti/p/0831885535", "_blank"); }}
                 />
                 <ChildButton
                     icon={<FaFacebookMessenger style={{ fontSize: 25, color: "aliceblue" }} />}
                     background='blue'
                     size={50}
-                    onClick={() => {window.open("https://web.facebook.com/ptscombinationTH?_rdc=1&_rdr", "_blank" );}}
+                    onClick={() => { window.open("https://web.facebook.com/ptscombinationTH?_rdc=1&_rdr", "_blank"); }}
                 />
                 <ChildButton
                     icon={<FaMapMarkerAlt style={{ fontSize: 25, color: "aliceblue" }} />}
                     background='darkred'
                     size={50}
-                    // onClick={() => {window.open("/Contact");}}
+                // onClick={() => {window.open("/Contact");}}
                 />
             </FloatingMenu>
         )
