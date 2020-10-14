@@ -15,7 +15,8 @@ export default class TableProject extends Component {
             name: "",
             desc: "",
             files: [],
-            dataIcon: []
+            dataIcon: [],
+            user: []
         };
 
         this.records = [
@@ -70,7 +71,7 @@ export default class TableProject extends Component {
                 cell: record => {
                     return (
                         <div>
-                            <NavLink to={`/EditProject/${record.project_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
+                            <NavLink to={`/Admin/EditProject/${record.project_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
                             <Button variant="outline-danger" fill onClick={() => this.onDelete(record.project_id)} style={{ color: "#35526F", marginRight: "0.5em" }}><FaTrashAlt /></Button>
                         </div>
                     );
@@ -120,12 +121,23 @@ export default class TableProject extends Component {
         ]
     }
 
+    componentWillMount() {
+        var user = JSON.parse(sessionStorage.getItem('user'));
+        this.setState({
+            user: user
+        });
+        console.log(user, " hgdhgsgadj");
+        if(user === null) {
+            window.location.replace('/Admin/Authentication', false);
+        }
+    }
+
     async onDelete(id) {
         var url_project = ip + "/pts/DeleteProject.php?id=" + id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         if (data_project === "delete project successfully") {
-            window.location.replace('/TableProject', false);
+            window.location.replace('/Admin/TableProject', false);
         } else {
             alert("ลบข้อมูลไม่สำเร็จ");
         }
@@ -169,7 +181,7 @@ export default class TableProject extends Component {
                 </Row>
                 <Row >
                     <Col style={{ marginLeft: "5%", marginRight: "5%", marginBottom: "2%", marginTop: "2%", textAlign: "end" }}>
-                        <NavLink to="/AddProject"><Button variant="success"> Add Project</Button></NavLink>
+                        <NavLink to="/Admin/AddProject"><Button variant="success"> Add Project</Button></NavLink>
                     </Col>
                 </Row>
                 <Row style={{ marginLeft: "5%", marginRight: "5%" }}>

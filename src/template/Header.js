@@ -28,8 +28,16 @@ export default class Header extends Component {
         super(props);
         this.state = {
             dropdownOpen: false,
-            dropdownOpen2: false
+            dropdownOpen2: false,
+            user: []
         }
+    }
+
+    componentWillMount() {
+        var user = sessionStorage.getItem('user');
+        this.setState({
+            user: JSON.parse(user)
+        });
     }
 
     toggle(e) {
@@ -41,8 +49,6 @@ export default class Header extends Component {
     }
 
     toggle2(e) {
-        console.log(e.target.className);
-        console.log(this.state.dropdownOpen2, " this.state.dropdownOpen2")
         if (e.target.className !== "dropdown-toggle nav-link") {
             this.setState({
                 dropdownOpen2: !this.state.dropdownOpen2
@@ -57,6 +63,10 @@ export default class Header extends Component {
         var sty_sub_product1 = {};
         var sty_sub_product2 = {};
         var sty_sub_product3 = {};
+
+        var sty_sub_admin1 = {};
+        var sty_sub_admin2 = {};
+
         var sty_contact = {};
         if (window.location.pathname === "/") {
             sty_home = { color: "#C7F50A" };
@@ -73,6 +83,10 @@ export default class Header extends Component {
             sty_sub_product3 = { color: "#C7F50A" };
         } else if (window.location.pathname === "/Contact") {
             sty_contact = { color: "#C7F50A" };
+        } else if (window.location.pathname === "/Admin/TableProject" || window.location.pathname === "/Admin/AddProject" || window.location.pathname === "/Admin/EditProject") {
+            sty_sub_admin1 = { color: "#C7F50A" };
+        } else if (window.location.pathname === "/Admin/TableCover" || window.location.pathname === "/Admin/EditCover") {
+            sty_sub_admin2 = { color: "#C7F50A" };
         }
         return (
             // <div>
@@ -105,6 +119,19 @@ export default class Header extends Component {
                                 <a href={URL_TRAINING} target="_blank" id="nav-Header" rel="noopener noreferrer">TRAINING</a>
                                 <a href={URL_SERVICE} target="_blank" id="nav-Header" rel="noopener noreferrer">SERVICE</a>
                                 <NavLink to="/Contact" id="nav-Header" style={sty_contact}>CONTACT US</NavLink>
+                                {
+                                    this.state.user !== null ?
+                                        this.state.user.levelName === "admin" ?
+                                            < NavDropdown title="ADMIN" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
+                                                <NavLink to="/Admin/TableProject" id="dopdown" style={sty_sub_admin1}>PROJECT</NavLink>
+                                                <NavLink to="/Admin/TableCover" id="dopdown" style={sty_sub_admin2}>COVER</NavLink>
+                                                <NavLink to="/Logout" id="dopdown">LOGOUT</NavLink>
+                                            </NavDropdown>
+                                            :
+                                            <> </>
+                                        :
+                                        <> </>
+                                }
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
@@ -135,6 +162,19 @@ export default class Header extends Component {
                                 <a href={URL_TRAINING} target="_blank" id="nav-Header" rel="noopener noreferrer">TRAINING</a>
                                 <a href={URL_SERVICE} target="_blank" id="nav-Header" rel="noopener noreferrer">SERVICE</a>
                                 <NavLink to="/Contact" id="nav-Header" style={sty_contact}>CONTACT US</NavLink>
+                                {
+                                    this.state.user !== null ?
+                                        this.state.user.levelName === "admin" ?
+                                            < NavDropdown title="ADMIN" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
+                                                <NavLink to="/Admin/TableProject" id="dopdown" style={sty_sub_admin1}>PROJECT</NavLink>
+                                                <NavLink to="/Admin/TableCover" id="dopdown" style={sty_sub_admin2}>COVER</NavLink>
+                                                <NavLink to="/Logout" id="dopdown">LOGOUT</NavLink>
+                                            </NavDropdown>
+                                            :
+                                            <> </>
+                                        :
+                                        <> </>
+                                }
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
@@ -192,7 +232,7 @@ export default class Header extends Component {
                     </Nav>
                 </Collapse>
             </Navbar> */}
-            </Container>
+            </Container >
             //      <div id="sectionStyle">
             // </div >
             // </div>

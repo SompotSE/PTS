@@ -8,6 +8,8 @@ import Request from "../content/RequestaQuote";
 import Product from "../content/Product";
 
 import Login from "../admin/Login";
+import Logout from "../admin/Logout";
+import Authentication from "../admin/Noti";
 import AddProject from "../admin/AddProject";
 import TableProject from "../admin/TableProject";
 import TableCover from "../admin/TableCover";
@@ -36,11 +38,13 @@ export default () => (
         <Route exact path="/Product/TestingSolutionIntegration" component={Product} />
 
         <Route exact path="/Login" component={Login} />
-        <Route exact path="/AddProject" component={AddProject} />
-        <Route exact path="/TableProject" component={TableProject} />
-        <Route exact path="/TableCover" component={TableCover} />
-        <Route exact path="/EditProject/:id" component={EditProject} />
-        <Route exact path="/EditCover/:id" component={EditCover} />
+        <Route exact path="/Logout" component={Logout} />
+        <Route exact path="/Admin/Authentication" component={Authentication} />
+        <Route exact path="/Admin/AddProject" component={AddProject} />
+        <Route exact path="/Admin/TableProject" component={TableProject} />
+        <Route exact path="/Admin/TableCover" component={TableCover} />
+        <Route exact path="/Admin/EditProject/:id" component={EditProject} />
+        <Route exact path="/Admin/EditCover/:id" component={EditCover} />
 
         <Route exact path="/Product/Labpts/BasicElectronic" component={BasicElectronic} />
         <Route exact path="/Product/Labpts/BasicAnalog" component={BasicAnalog} />

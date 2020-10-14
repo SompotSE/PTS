@@ -12,7 +12,8 @@ export default class TableCover extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataIcon: []
+            dataIcon: [],
+            user: []
         };
 
         this.records = [ ];
@@ -67,7 +68,7 @@ export default class TableCover extends Component {
                 cell: record => {
                     return (
                         <div>
-                            <NavLink to={`/EditCover/${record.cover_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
+                            <NavLink to={`/Admin/EditCover/${record.cover_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
                         </div>
                     );
                 }
@@ -114,6 +115,17 @@ export default class TableCover extends Component {
                 }
             },
         ]
+    }
+
+    componentWillMount() {
+        var user = JSON.parse(sessionStorage.getItem('user'));
+        this.setState({
+            user: user
+        });
+        console.log(user, " hgdhgsgadj");
+        if(user === null) {
+            window.location.replace('/Admin/Authentication', false);
+        }
     }
 
     async componentDidMount() {

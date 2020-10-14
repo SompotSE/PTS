@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container, Image, Carousel } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 import '../css/footer.css';
 import logo1 from '../image/logo/logo1.png';
@@ -87,7 +88,7 @@ export default class Footer extends Component {
                     <Row id="content">
                         <Col xs={6} md={6}>
                             <Row>
-                                <div id="about4"> LOGIN | REGISTER </div>
+                                <div id="about4"> <NavLink to="/Login">LOGIN</NavLink> | REGISTER </div>
                             </Row>
                         </Col>
                         <Col xs={6} md={6}>

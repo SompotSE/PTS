@@ -13,13 +13,25 @@ export default class AddProject extends Component {
         this.state = {
             name: "",
             desc: "",
-            files: []
+            files: [],
+            user: []
         };
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onCancel = this.onCancel.bind(this);
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeDesc = this.onChangeDesc.bind(this);
+    }
+
+    componentWillMount() {
+        var user = JSON.parse(sessionStorage.getItem('user'));
+        this.setState({
+            user: user
+        });
+        console.log(user, " hgdhgsgadj");
+        if(user === null) {
+            window.location.replace('/Admin/Authentication', false);
+        }
     }
 
     getFiles(files) {
@@ -51,7 +63,7 @@ export default class AddProject extends Component {
 
             const res = await response.json();
             if (res.code === 200) { 
-                window.location.replace('/TableProject', false);
+                window.location.replace('/Admin/TableProject', false);
             } else {
                 alert("บันทึกข้อมูลไม่สำเร็จ");
             }
@@ -143,7 +155,7 @@ export default class AddProject extends Component {
                 <Row style={{ marginBottom: "5%", marginLeft: "5%", marginRight: "5%", marginTop: "2%" }}>
                     <Col style={{ textAlign: "center" }}>
                         <Button variant="primary" onClick={this.onSubmit}>Save</Button> &nbsp;&nbsp;
-                        <NavLink to="/TableProject"><Button variant="danger" onClick={this.onCancel}>Cancel</Button></NavLink>
+                        <NavLink to="/Admin/TableProject"><Button variant="danger" onClick={this.onCancel}>Cancel</Button></NavLink>
                     </Col>
                 </Row>
             </Container>
