@@ -121,12 +121,13 @@ export default class TableProject extends Component {
     }
 
     async onDelete(id) {
-        console.log(id, " id delete");
         var url_project = ip + "/pts/DeleteProject.php?id=" + id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         if (data_project === "delete project successfully") {
             window.location.replace('/TableProject', false);
+        } else {
+            alert("ลบข้อมูลไม่สำเร็จ");
         }
     }
 

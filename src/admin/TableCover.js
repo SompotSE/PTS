@@ -1,40 +1,21 @@
 import React, { Component } from "react";
-import { Container, Row, Button, Col } from 'react-bootstrap';
+import { Container, Row, Button, Col, Image } from 'react-bootstrap';
 import ReactDatatable from '@ashvin27/react-datatable';
-
+import { NavLink } from 'react-router-dom';
 import { FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
+import axios from 'axios';
+// var ip2 = "http://localhost";
+var ip = "http://aiavs.net:80";
 
 export default class TableCover extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            dataIcon: []
         };
 
-        this.records = [
-            {
-                item: "1",
-                name: "Cover1",
-                img: "Img1"
-            },
-            {
-                item: "2",
-                name: "Cover2",
-                img: "Img2"
-            },
-            {
-                item: "3",
-                name: "Cover3",
-                img: "Img3"
-            },
-            {
-                item: "4",
-                name: "Cover4",
-                img: "Img4"
-            }
-        ];
-
-        this.onEdit = this.onEdit.bind(this);
+        this.records = [ ];
 
         this.columns = [
             {
@@ -46,6 +27,21 @@ export default class TableCover extends Component {
                 sortable: true,
             },
             {
+                key: "cover_img_path",
+                text: "IMAGE",
+                className: "cover_img_path",
+                width: 311,
+                align: "center",
+                sortable: true,
+                cell: record => {
+                    return (
+                        <div>
+                            <Image src={record.cover_img_path} width='30%' alt={this.state.img_path} />
+                        </div>
+                    );
+                }
+            },
+            {
                 key: "name",
                 text: "NAME COVER",
                 className: "name",
@@ -54,10 +50,10 @@ export default class TableCover extends Component {
                 sortable: true
             },
             {
-                key: "img",
-                text: "IMAGE",
-                className: "img",
-                width: 542,
+                key: "cover_img",
+                text: "NAME IMAGE",
+                className: "cover_img",
+                width: 311,
                 align: "center",
                 sortable: true
             },
@@ -71,7 +67,7 @@ export default class TableCover extends Component {
                 cell: record => {
                     return (
                         <div>
-                            <Button variant="outline-primary" onClick={() => this.onEdit(record.around)} style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button>
+                            <NavLink to={`/EditCover/${record.cover_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
                         </div>
                     );
                 }
@@ -120,11 +116,33 @@ export default class TableCover extends Component {
         ]
     }
 
-    onEdit() {
+    async componentDidMount() {
+        var url_cover = ip + "/pts/GetCover.php";
+        const cover = await axios.get(url_cover);
+        const data_cover = cover.data;
+        console.log(data_cover, " data_cover");
+        this.setState({
+            dataIcon: data_cover
+        });
+    }
 
+    itemCover() {
+        for (let i = 0; i < this.state.dataIcon.length; i++) {
+            this.records.push(
+                {
+                    "item": i + 1,
+                    "name": "COVER" + (i+1),
+                    "cover_id": this.state.dataIcon[i].cover_id,
+                    "cover_img": this.state.dataIcon[i].cover_img,
+                    "cover_img_path": "http://aiavs.net/pts/cover/" + this.state.dataIcon[i].cover_img
+                }
+            );
+        }
     }
 
     render() {
+        this.records = [];
+        this.itemCover();
         return (
             <Container>
                 <Row style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>

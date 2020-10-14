@@ -6,7 +6,7 @@ import axios from 'axios';
 // var ip2 = "http://localhost";
 var ip = "http://aiavs.net:80";
 
-export default class AddProject extends Component {
+export default class EditProject extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -68,15 +68,15 @@ export default class AddProject extends Component {
             }
             const response = await fetch(ip + '/pts/SaveEditProject.php', {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
                 body: JSON.stringify(save_project)
             });
-            const res = await response.text();
-            if (res) { }
-            window.location.replace('/TableProject', false);
+            
+            const res = await response.json();
+            if (res.code === 200) { 
+                window.location.replace('/TableProject', false);
+            } else {
+                alert("บันทึกข้อมูลไม่สำเร็จ");
+            }
         }
     }
 

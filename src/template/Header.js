@@ -7,16 +7,21 @@ import { NavLink } from 'react-router-dom';
 import logo from '../image/logoPTS.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import cover1 from '../image/cover1.jpg'
-import cover2 from '../image/cover2.jpg'
-import cover3 from '../image/cover3.jpg'
-import cover4 from '../image/cover4.jpg'
+// import cover1 from '../image/cover1.jpg'
+// import cover2 from '../image/cover2.jpg'
+// import cover3 from '../image/cover3.jpg'
+// import cover4 from '../image/cover4.jpg'
 import '../css/header.css';
 
 var URL_TRAINING = "https://www.yokogawa.com/solutions/services/training/";
 var URL_SERVICE = "https://www.yokogawa.com/solutions/services/basic-maintenace-services/";
 var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
 var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
+
+var cover1 = "http://aiavs.net/pts/cover/cover1.jpg";
+var cover2 = "http://aiavs.net/pts/cover/cover2.jpg";
+var cover3 = "http://aiavs.net/pts/cover/cover3.jpg";
+var cover4 = "http://aiavs.net/pts/cover/cover4.jpg";
 
 export default class Header extends Component {
     constructor(props) {
@@ -136,16 +141,16 @@ export default class Header extends Component {
                 }
                 <Row>
                     <Col >
-                        <Image src={cover1} fluid responsive />
+                        <Image src={cover1} alt={cover1} fluid responsive />
                     </Col>
                     <Col >
-                        <Image src={cover2} fluid responsive />
+                        <Image src={cover2} alt={cover2} fluid responsive />
                     </Col>
                     <Col >
-                        <Image src={cover3} fluid responsive />
+                        <Image src={cover3} alt={cover3} fluid responsive />
                     </Col>
                     <Col >
-                        <Image src={cover4} fluid responsive />
+                        <Image src={cover4} alt={cover4} fluid responsive />
                     </Col>
                 </Row>
                 {/* <Navbar color="light" light expand="md" right>

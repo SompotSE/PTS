@@ -12,6 +12,7 @@ import AddProject from "../admin/AddProject";
 import TableProject from "../admin/TableProject";
 import TableCover from "../admin/TableCover";
 import EditProject from "../admin/EditProject";
+import EditCover from "../admin/EditCover";
 
 import BasicElectronic from "../content/Product/LabPTS/BasicElectronic";
 import BasicAnalog from "../content/Product/LabPTS/BasicAnalog";
@@ -39,6 +40,7 @@ export default () => (
         <Route exact path="/TableProject" component={TableProject} />
         <Route exact path="/TableCover" component={TableCover} />
         <Route exact path="/EditProject/:id" component={EditProject} />
+        <Route exact path="/EditCover/:id" component={EditCover} />
 
         <Route exact path="/Product/Labpts/BasicElectronic" component={BasicElectronic} />
         <Route exact path="/Product/Labpts/BasicAnalog" component={BasicAnalog} />

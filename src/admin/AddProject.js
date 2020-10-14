@@ -42,15 +42,19 @@ export default class AddProject extends Component {
 
             const response = await fetch(ip + '/pts/SaveProject.php', {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                // mode: 'no-cors',
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
                 body: JSON.stringify(save_project)
             });
-            const res = await response.text();
-            if(res){ }
-            window.location.replace('/TableProject', false);
+
+            const res = await response.json();
+            if (res.code === 200) { 
+                window.location.replace('/TableProject', false);
+            } else {
+                alert("บันทึกข้อมูลไม่สำเร็จ");
+            }
 
             //   fetch('http://localhost:3000/', ip + '/pts/SaveProject.php', {
             //     method : 'post',
