@@ -15,7 +15,7 @@ import '../css/header.css';
 
 var URL_TRAINING = "https://www.yokogawa.com/solutions/services/training/";
 var URL_SERVICE = "https://www.yokogawa.com/solutions/services/basic-maintenace-services/";
-var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
+// var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
 var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
 
 var cover1 = "http://aiavs.net/pts/cover/cover1.jpg";
@@ -112,7 +112,8 @@ export default class Header extends Component {
                                 <NavDropdown title="PRODUCT" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} >
                                     <NavLink to="/Product/TestAndMeasurement" id="dopdown" style={sty_sub_product1}>Test & Measuremwnt Product</NavLink>
                                     <NavLink to="/Product/Labpts" id="dopdown" style={sty_sub_product2}>LABPTS+</NavLink>
-                                    <a href={URL_DIGITAL} target="_blank" id="dopdown" rel="noopener noreferrer">Digital Signal Processing and Control Engineering</a>
+                                    {/* <a href={URL_DIGITAL} target="_blank" id="dopdown" rel="noopener noreferrer">Digital Signal Processing and Control Engineering</a> */}
+                                    <NavLink to="" id="dopdown" style={sty_sub_product2}>Digital Signal Processing and Control Engineering</NavLink>
                                     <NavLink to="/Product/TestingSolutionIntegration" id="dopdown" style={sty_sub_product3}>Testing Solution Integration</NavLink>
                                     <a href={URL_METROLOGICAL} target="_blank" id="dopdown" rel="noopener noreferrer">Metrological Sensors & Systems</a>
                                 </NavDropdown>
@@ -140,7 +141,7 @@ export default class Header extends Component {
                         <Col id="imgLogo">
                             <img
                                 src={logo}
-                                width="20%"
+                                width="23%"
                                 height="auto"
                                 className="d-inline-block align-top"
                                 alt="React Bootstrap logo"
@@ -155,7 +156,8 @@ export default class Header extends Component {
                                 <NavDropdown title="PRODUCT" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
                                     <NavLink to="/Product/TestAndMeasurement" id="dopdown" style={sty_sub_product1}>Test & Measurement Product</NavLink>
                                     <NavLink to="/Product/Labpts" id="dopdown" style={sty_sub_product2}>LABPTS+</NavLink>
-                                    <a href={URL_DIGITAL} target="_blank" id="dopdown" rel="noopener noreferrer">Digital Signal Processing and Control Engineering</a>
+                                    {/* <a href={URL_DIGITAL} target="_blank" id="dopdown" rel="noopener noreferrer">Digital Signal Processing and Control Engineering</a> */}
+                                    <NavLink to="" id="dopdown" style={sty_sub_product2}>Digital Signal Processing and Control Engineering</NavLink>
                                     <NavLink to="/Product/TestingSolutionIntegration" id="dopdown" style={sty_sub_product3}>Testing Solution Integration</NavLink>
                                     <a href={URL_METROLOGICAL} target="_blank" id="dopdown" rel="noopener noreferrer">Metrological Sensors & Systems</a>
                                 </NavDropdown>

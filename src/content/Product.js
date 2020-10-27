@@ -14,7 +14,7 @@ var URL_ACQUISITION = "https://www.yokogawa.com/solutions/products-platforms/dat
 var URL_CONTRROL = "https://www.yokogawa.com/solutions/products-platforms/control-system/";
 var URL_METROLOGICAL1 = "https://novalynx.com/store/pc/home2.asp";
 
-var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
+// var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
 var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
 
 export default class Product extends Component {
@@ -71,7 +71,9 @@ export default class Product extends Component {
                             <ListGroup defaultActiveKey="/TestAndMeasurement" >
                                 <NavLink to="/Product/TestAndMeasurement" id={sty_sub_product1}><ListGroup.Item action id={sty_sub_product1}>Test & Measurement Product</ListGroup.Item></NavLink>
                                 <NavLink to="/Product/Labpts" id={sty_sub_product2}><ListGroup.Item action id={sty_sub_product2}>LABPTS+</ListGroup.Item></NavLink>
-                                <ListGroup.Item action href={URL_DIGITAL} target="_blank">Digital Signal Processing and Control Engineering</ListGroup.Item>
+                                {/* <ListGroup.Item action href={URL_DIGITAL} target="_blank">Digital Signal Processing and Control Engineering</ListGroup.Item> */}
+                                <ListGroup.Item action >Digital Signal Processing and Control Engineering</ListGroup.Item>
+                                {/* <NavLink to="" id="dopdown" id={sty_sub_product2}>Digital Signal Processing and Control Engineering</NavLink> */}
                                 <NavLink to="/Product/TestingSolutionIntegration" id={sty_sub_product3}><ListGroup.Item action id={sty_sub_product3}>Testing Solution Integration</ListGroup.Item></NavLink>
                                 <ListGroup.Item action href={URL_METROLOGICAL} target="_blank">Metrological Sensors & Systems</ListGroup.Item>
                             </ListGroup>

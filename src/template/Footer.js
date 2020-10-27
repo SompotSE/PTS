@@ -79,7 +79,7 @@ export default class Footer extends Component {
                         </Col>
                         <Col xs={12} md={4} id="facebookFooter">
                             <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
-                                <Image src={Facebook2} id="link2" fluid responsive />
+                                <Image src={Facebook2} id="link2" style={{width:"200%"}} fluid responsive />
                             </a>
                         </Col>
                     </Row>
