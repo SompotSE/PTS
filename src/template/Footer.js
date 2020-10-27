@@ -3,8 +3,8 @@ import { Col, Row, Container, Image, Carousel } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 import '../css/footer.css';
-import logo1 from '../image/logo/logo1.png';
-import logo2 from '../image/logo/logo2.png';
+// import logo1 from '../image/logo/logo1.png';
+// import logo2 from '../image/logo/logo2.png';
 import logo3 from '../image/logo/logo3.png';
 import logo4 from '../image/logo/logo4.png';
 
@@ -14,8 +14,8 @@ import logoYoutube from '../image/youtube.png'
 
 import Facebook2 from '../image/facebook2.png'
 
-var URL1 = "http://www.pg-intergroup.com/";
-var URL2 = "https://www.dspace.com/en/pub/home.cfm";
+// var URL1 = "http://www.pg-intergroup.com/";
+// var URL2 = "https://www.dspace.com/en/pub/home.cfm";
 var URL3 = "https://novalynx.com/store/pc/home2.asp";
 var URL4 = "https://www.yokogawa.com/th";
 
@@ -35,7 +35,7 @@ export default class Footer extends Component {
                         </Col>
                         <Col xs={12} md={4} id="imgFooter">
                             < Carousel controls={false} indicators={false}>
-                                <Carousel.Item>
+                                {/* <Carousel.Item>
                                     <a href={URL1} target="_blank" id="dopdown" rel="noopener noreferrer">
                                         <img
                                             src={logo1}
@@ -54,7 +54,7 @@ export default class Footer extends Component {
                                             alt="logo"
                                         />
                                     </a>
-                                </Carousel.Item>
+                                </Carousel.Item> */}
                                 <Carousel.Item>
                                     <a href={URL3} target="_blank" id="dopdown" rel="noopener noreferrer">
                                         <img
