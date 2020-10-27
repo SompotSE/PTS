@@ -6,59 +6,68 @@ import banner3 from '../image/banner3.jpg';
 import banner4 from '../image/banner4.jpg';
 import banner5 from '../image/banner5.jpg';
 import banner6 from '../image/banner6.jpg';
+
+import HomeNews from './HomeNews';
+
 export default class Home extends Component {
     render() {
         return (
-            < Carousel style={{marginLeft: "1%", marginRight: "1%", marginTop: "1%"}}>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner1}
-                        alt="First slide"
-                        fluid responsive
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner2}
-                        alt="Third slide"
-                        fluid responsive
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner3}
-                        alt="Third slide"
-                        fluid responsive
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner4}
-                        alt="Third slide"
-                        fluid responsive
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner5}
-                        alt="Third slide"
-                        fluid responsive
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner6}
-                        alt="Third slide"
-                        fluid responsive
-                    />
-                </Carousel.Item>
-            </Carousel >
+            <div>
+                < Carousel style={{ marginLeft: "1%", marginRight: "1%", marginTop: "1%" }}>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={banner1}
+                            alt="First slide"
+                            fluid responsive
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={banner2}
+                            alt="Third slide"
+                            fluid responsive
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={banner3}
+                            alt="Third slide"
+                            fluid responsive
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={banner4}
+                            alt="Third slide"
+                            fluid responsive
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={banner5}
+                            alt="Third slide"
+                            fluid responsive
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={banner6}
+                            alt="Third slide"
+                            fluid responsive
+                        />
+                    </Carousel.Item>
+                </Carousel >
+
+                {/* <Container> */}
+                    <HomeNews />
+                {/* </Container> */}
+            </div>
         )
     }
 }
