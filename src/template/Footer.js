@@ -78,9 +78,21 @@ export default class Footer extends Component {
                             </Carousel >
                         </Col>
                         <Col xs={12} md={4} id="facebookFooter">
-                            <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
-                                <Image src={Facebook2} id="link2" style={{width:"200%"}} fluid responsive />
-                            </a>
+                            {/* <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
+                                <Image src={Facebook2} id="link2" style={{width:"80%"}} responsive /> */}
+                                < Carousel controls={false} indicators={false}>
+                                    <Carousel.Item>
+                                    <a href="https://www.facebook.com/ptscombinationTH" target="_blank" rel="noopener noreferrer">
+                                        <img
+                                            src={Facebook2}
+                                            width="80%"
+                                            className="d-inline-block align-top"
+                                            alt="logo"
+                                        />
+                                        </a>
+                                    </Carousel.Item>
+                                </Carousel >
+                            {/* </a> */}
                         </Col>
                     </Row>
                 </Container>
