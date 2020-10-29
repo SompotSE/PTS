@@ -141,7 +141,7 @@ export default class Header extends Component {
                         <Col id="imgLogo">
                             <img
                                 src={logo}
-                                width="23%"
+                                width="28%"
                                 height="auto"
                                 className="d-inline-block align-top"
                                 alt="React Bootstrap logo"
