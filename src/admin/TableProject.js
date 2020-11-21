@@ -6,7 +6,7 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://aiavs.net:80";
+var ip = "http://178.128.209.69";
 
 export default class TableProject extends Component {
     constructor(props) {

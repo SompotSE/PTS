@@ -4,7 +4,7 @@ import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://aiavs.net:80";
+var ip = "http://178.128.209.69";
 
 export default class EditCover extends Component {
     constructor(props) {
@@ -44,7 +44,7 @@ export default class EditCover extends Component {
         this.setState({
             id: data_project.cover_id,
             img: data_project.cover_img,
-            img_path: "http://aiavs.net/pts/cover/" + data_project.cover_img,
+            img_path: "http://178.128.209.69/PTS/cover/" + data_project.cover_img,
         });
     }
 

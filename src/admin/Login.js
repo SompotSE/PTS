@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Container, Button, Image, Row } from 'react-bootstrap';
 import logo from '../image/logoPTS.png';
 // var ip2 = "http://localhost";
-var ip = "http://aiavs.net:80";
+var ip = "http://178.128.209.69";
 
 export default class Login extends Component {
     constructor(props) {
