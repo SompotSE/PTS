@@ -41,7 +41,7 @@ export default class EditProject extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/pts/GetEditProject.php?project_id=" + this.props.match.params.id;
+        var url_project = ip + "/PTS/GetEditProject.php?project_id=" + this.props.match.params.id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         console.log(data_project, " data_project");
@@ -78,7 +78,7 @@ export default class EditProject extends Component {
                     img: ""
                 }
             }
-            const response = await fetch(ip + '/pts/SaveEditProject.php', {
+            const response = await fetch(ip + '/PTS/SaveEditProject.php', {
                 method: 'POST',
                 body: JSON.stringify(save_project)
             });

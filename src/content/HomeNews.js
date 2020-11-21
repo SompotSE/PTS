@@ -18,7 +18,7 @@ export default class HomeNews extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/pts/GetNews.php";
+        var url_project = ip + "/PTS/GetNews.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({

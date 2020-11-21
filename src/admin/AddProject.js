@@ -52,7 +52,7 @@ export default class AddProject extends Component {
                 img: this.state.files[0].base64
             }
 
-            const response = await fetch(ip + '/pts/SaveProject.php', {
+            const response = await fetch(ip + '/PTS/SaveProject.php', {
                 method: 'POST',
                 // mode: 'no-cors',
                 // headers: {

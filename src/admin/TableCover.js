@@ -129,7 +129,7 @@ export default class TableCover extends Component {
     }
 
     async componentDidMount() {
-        var url_cover = ip + "/pts/GetCover.php";
+        var url_cover = ip + "/PTS/GetCover.php";
         const cover = await axios.get(url_cover);
         const data_cover = cover.data;
         console.log(data_cover, " data_cover");

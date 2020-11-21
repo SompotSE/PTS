@@ -133,7 +133,7 @@ export default class TableProject extends Component {
     }
 
     async onDelete(id) {
-        var url_project = ip + "/pts/DeleteProject.php?id=" + id;
+        var url_project = ip + "/PTS/DeleteProject.php?id=" + id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         if (data_project === "delete project successfully") {
@@ -144,7 +144,7 @@ export default class TableProject extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/pts/GetProject.php";
+        var url_project = ip + "/PTS/GetProject.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({

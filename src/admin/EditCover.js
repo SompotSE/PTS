@@ -37,7 +37,7 @@ export default class EditCover extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/pts/GetEditCover.php?cover_id=" + this.props.match.params.id;
+        var url_project = ip + "/PTS/GetEditCover.php?cover_id=" + this.props.match.params.id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         console.log(data_project, " data_project");
@@ -63,7 +63,7 @@ export default class EditCover extends Component {
                 img: ""
             }
         }
-        const response = await fetch(ip + '/pts/SaveEditCover.php', {
+        const response = await fetch(ip + '/PTS/SaveEditCover.php', {
             method: 'POST',
             // mode: 'no-cors',
             // headers: {

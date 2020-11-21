@@ -18,7 +18,7 @@ export default class TestMeasurIcon extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/pts/GetProject.php";
+        var url_project = ip + "/PTS/GetProject.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({

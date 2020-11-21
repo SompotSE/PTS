@@ -24,7 +24,7 @@ export default class Login extends Component {
             password: this.state.password
         }
 
-        const response = await fetch(ip + '/pts/ChackUser.php', {
+        const response = await fetch(ip + '/PTS/ChackUser.php', {
             method: 'POST',
             body: JSON.stringify(data)
         });
