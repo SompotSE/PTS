@@ -87,7 +87,7 @@ export default class EditProject extends Component {
             if (res.code === 200) { 
                 window.location.replace('/Admin/TableProject', false);
             } else {
-                alert("บันทึกข้อมูลไม่สำเร็จ");
+                alert("Save Data Error");
             }
         }
     }

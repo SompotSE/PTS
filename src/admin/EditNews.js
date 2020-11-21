@@ -3,14 +3,14 @@ import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-// var ip2 = "http://localhost";
 var ip = "http://178.128.209.69";
 
-export default class EditCover extends Component {
+export default class EditNews extends Component {
     constructor(props) {
         super(props);
         this.state = {
             id: 0,
+            detail: "",
             img: "",
             img_path: "",
             files: [],
@@ -19,6 +19,7 @@ export default class EditCover extends Component {
 
         this.onSubmit = this.onSubmit.bind(this);
         this.onCancel = this.onCancel.bind(this);
+        this.onChangeDetail = this.onChangeDetail.bind(this);
     }
 
     componentWillMount() {
@@ -26,7 +27,6 @@ export default class EditCover extends Component {
         this.setState({
             user: user
         });
-        console.log(user, " hgdhgsgadj");
         if(user === null) {
             window.location.replace('/Admin/Authentication', false);
         }
@@ -37,51 +37,49 @@ export default class EditCover extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetEditCover.php?cover_id=" + this.props.match.params.id;
+        var url_project = ip + "/PTS/GetEditNews.php?news_id=" + this.props.match.params.id;
         const project = await axios.get(url_project);
-        const data_project = project.data;
-        console.log(data_project, " data_project");
+        const data_news = project.data;
         this.setState({
-            id: data_project.cover_id,
-            img: data_project.cover_img,
-            img_path: "http://178.128.209.69/PTS/cover/" + data_project.cover_img,
+            id: data_news.news_id,
+            detail: data_news.news_detail,
+            img: data_news.news_img,
+            img_path: "http://178.128.209.69/PTS/news/" + data_news.news_img,
         });
     }
 
     async onSubmit() {
-        var save_project;
-        if (this.state.files.length !== 0) {
-            save_project = {
-                id: this.state.id,
-                img_name: this.state.img,
-                img: this.state.files[0].base64
-            }
+        if (this.state.detail === "") {
+            alert("Please enter a news detail.");
         } else {
-            save_project = {
-                id: this.state.id,
-                img_name: this.state.img,
-                img: ""
+            var save_news;
+            if(this.state.files.length !== 0) {
+                save_news = {
+                    id: this.state.id,
+                    detail: this.state.detail,
+                    img_name: this.state.img,
+                    img: this.state.files[0].base64
+                }
+            } else {
+                save_news = {
+                    id: this.state.id,
+                    detail: this.state.detail,
+                    img_name: this.state.img,
+                    img: ""
+                }
+            }
+            const response = await fetch(ip + '/PTS/SaveEditNews.php', {
+                method: 'POST',
+                body: JSON.stringify(save_news)
+            });
+            
+            const res = await response.json();
+            if (res.code === 200) { 
+                window.location.replace('/Admin/TableNews', false);
+            } else {
+                alert("Save Data Error");
             }
         }
-        const response = await fetch(ip + '/PTS/SaveEditCover.php', {
-            method: 'POST',
-            // mode: 'no-cors',
-            // headers: {
-            //     'Content-Type': 'application/json',
-            //     'Accept': 'application/json'
-            // },
-            body: JSON.stringify(save_project)
-        });
-        const res = await response.json();
-        if (res.code === 200) {
-            window.location.replace('/Admin/TableCover', false);
-        } else {
-            alert("Save Data Error");
-        }
-        // const res = await response.json();
-        // console.log(res, " res");
-        // if (res) { }
-        // window.location.replace('/TableProject', false);
     }
 
     onCancel() {
@@ -90,18 +88,33 @@ export default class EditCover extends Component {
         })
     }
 
+    onChangeDetail(e) {
+        this.setState({
+            detail: e.target.value
+        })
+    }
+
     render() {
         return (
             <Container>
                 <Row style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>
                     <Col style={{ textAlign: "center" }}>
-                        <h4 >Edit Cover</h4>
+                        <h4 >Edit News</h4>
+                    </Col>
+                </Row>
+                <Row style={{ marginLeft: "5%", marginRight: "5%" }}>
+                    <Col>
+                        <Form>
+                            <Form.Group controlId="formGroupDetail">
+                                <Form.Label style={{ fontWeight: "bold" }}>Detail</Form.Label>
+                                <Form.Control as="textarea" rows="3" placeholder="Detail" name="detail" onChange={this.onChangeDetail} value={this.state.detail} />
+                            </Form.Group>
+                        </Form>
                     </Col>
                 </Row>
                 <Row style={{ marginLeft: "5%", marginRight: "5%" }}>
                     <Form>
                         <Form.Label style={{ fontWeight: "bold" }}>Select Image</Form.Label> &nbsp;&nbsp;
-                        {/* <input type="file" name="payment_pic" id="payment_pic" accept="image/*;capture=camera" onChange={this.getFiles.bind(this)}></input> */}
                         <FileBase64
                             multiple={true}
                             onDone={this.getFiles.bind(this)} />
@@ -123,7 +136,7 @@ export default class EditCover extends Component {
                 <Row style={{ marginBottom: "5%", marginLeft: "5%", marginRight: "5%", marginTop: "2%" }}>
                     <Col style={{ textAlign: "center" }}>
                         <Button variant="primary" onClick={this.onSubmit}>Save</Button> &nbsp;&nbsp;
-                        <NavLink to="/Admin/TableCover"><Button variant="danger" onClick={this.onCancel}>Cancel</Button></NavLink>
+                        <NavLink to="/Admin/TableNews"><Button variant="danger" onClick={this.onCancel}>Cancel</Button></NavLink>
                     </Col>
                 </Row>
             </Container>

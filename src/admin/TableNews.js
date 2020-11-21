@@ -1,22 +1,28 @@
 import React, { Component } from "react";
-import { Container, Row, Button, Col, Image } from 'react-bootstrap';
+import { Image, Container, Row, Button, Col } from 'react-bootstrap';
 import ReactDatatable from '@ashvin27/react-datatable';
 import { NavLink } from 'react-router-dom';
-import { FaPencilAlt } from "react-icons/fa";
+import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
 import axios from 'axios';
 // var ip2 = "http://localhost";
 var ip = "http://178.128.209.69";
 
-export default class TableCover extends Component {
+export default class TableNews extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: "",
+            desc: "",
+            files: [],
             dataIcon: [],
             user: []
         };
 
-        this.records = [ ];
+        this.records = [
+        ];
+
+        this.onDelete = this.onDelete.bind(this);
 
         this.columns = [
             {
@@ -28,33 +34,33 @@ export default class TableCover extends Component {
                 sortable: true,
             },
             {
-                key: "cover_img_path",
+                key: "news_img_path",
                 text: "IMAGE",
-                className: "cover_img_path",
+                className: "news_img_path",
                 width: 311,
                 align: "center",
                 sortable: true,
                 cell: record => {
                     return (
                         <div>
-                            <Image src={record.cover_img_path} width='50%' alt={this.state.img_path} />
+                            <Image src={record.news_img_path} width='50%' alt={this.state.img_path} />
                         </div>
                     );
                 }
             },
             {
-                key: "name",
-                text: "NAME COVER",
-                className: "name",
+                key: "news_detail",
+                text: "NEWS DETAIL",
+                className: "news_detail",
                 width: 311,
                 align: "center",
                 sortable: true
             },
             {
-                key: "cover_img",
+                key: "news_img",
                 text: "NAME IMAGE",
-                className: "cover_img",
-                width: 311,
+                className: "news_img",
+                width: 251,
                 align: "center",
                 sortable: true
             },
@@ -62,13 +68,14 @@ export default class TableCover extends Component {
                 key: "action",
                 text: "",
                 className: "action",
-                width: 80,
+                width: 140,
                 align: "center",
                 sortable: false,
                 cell: record => {
                     return (
                         <div>
-                            <NavLink to={`/Admin/EditCover/${record.cover_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
+                            <NavLink to={`/Admin/EditNews/${record.news_id}`}><Button variant="outline-primary" style={{ color: "#35526F", marginRight: "0.5em" }}><FaPencilAlt /></Button></NavLink>
+                            <Button variant="outline-danger" fill onClick={() => this.onDelete(record.news_id)} style={{ color: "#35526F", marginRight: "0.5em" }}><FaTrashAlt /></Button>
                         </div>
                     );
                 }
@@ -127,25 +134,35 @@ export default class TableCover extends Component {
         }
     }
 
+    async onDelete(id) {
+        var url_project = ip + "/PTS/DeleteNews.php?id=" + id;
+        const project = await axios.get(url_project);
+        const data_project = project.data;
+        if (data_project === "delete news successfully") {
+            window.location.replace('/Admin/TableNews', false);
+        } else {
+            alert("ลบข้อมูลไม่สำเร็จ");
+        }
+    }
+
     async componentDidMount() {
-        var url_cover = ip + "/PTS/GetCover.php";
-        const cover = await axios.get(url_cover);
-        const data_cover = cover.data;
-        console.log(data_cover, " data_cover");
+        var url_project = ip + "/PTS/GetNews.php";
+        const project = await axios.get(url_project);
+        const data_project = project.data;
         this.setState({
-            dataIcon: data_cover
+            dataIcon: data_project
         });
     }
 
-    itemCover() {
+    itemNews() {
         for (let i = 0; i < this.state.dataIcon.length; i++) {
             this.records.push(
                 {
                     "item": i + 1,
-                    "name": "COVER" + (i+1),
-                    "cover_id": this.state.dataIcon[i].cover_id,
-                    "cover_img": this.state.dataIcon[i].cover_img,
-                    "cover_img_path": "http://178.128.209.69/PTS/cover/" + this.state.dataIcon[i].cover_img
+                    "news_detail": this.state.dataIcon[i].news_detail,
+                    "news_id": this.state.dataIcon[i].news_id,
+                    "news_img": this.state.dataIcon[i].news_img,
+                    "news_img_path": "http://178.128.209.69/PTS/news/" + this.state.dataIcon[i].news_img
                 }
             );
         }
@@ -153,12 +170,18 @@ export default class TableCover extends Component {
 
     render() {
         this.records = [];
-        this.itemCover();
+        this.itemNews();
+        // this.records = this.state.dataIcon;
         return (
             <Container>
                 <Row style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>
                     <Col style={{ textAlign: "center" }}>
-                        <h4 >Cover</h4>
+                        <h4 >Project</h4>
+                    </Col>
+                </Row>
+                <Row >
+                    <Col style={{ marginLeft: "5%", marginRight: "5%", marginBottom: "2%", marginTop: "2%", textAlign: "end" }}>
+                        <NavLink to="/Admin/AddNews"><Button variant="success"> Add News</Button></NavLink>
                     </Col>
                 </Row>
                 <Row style={{ marginLeft: "5%", marginRight: "5%" }}>
@@ -173,3 +196,4 @@ export default class TableCover extends Component {
         )
     }
 }
+

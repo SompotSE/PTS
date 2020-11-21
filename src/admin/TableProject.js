@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Button, Col } from 'react-bootstrap';
+import { Image, Container, Row, Button, Col } from 'react-bootstrap';
 import ReactDatatable from '@ashvin27/react-datatable';
 import { NavLink } from 'react-router-dom';
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
@@ -20,18 +20,6 @@ export default class TableProject extends Component {
         };
 
         this.records = [
-            {
-                item: "1",
-                name: "testtt"
-            },
-            {
-                item: "1",
-                name: "testtt"
-            },
-            {
-                item: "1",
-                name: "testtt"
-            }
         ];
 
         this.onDelete = this.onDelete.bind(this);
@@ -46,6 +34,21 @@ export default class TableProject extends Component {
                 sortable: true,
             },
             {
+                key: "project_img",
+                text: "IMAGE",
+                className: "project_img",
+                width: 311,
+                align: "center",
+                sortable: true,
+                cell: record => {
+                    return (
+                        <div>
+                            <Image src={record.project_img} width='50%' alt={this.state.img_path} />
+                        </div>
+                    );
+                }
+            },
+            {
                 key: "project_name",
                 text: "NAME PROJECT",
                 className: "project_name",
@@ -57,7 +60,7 @@ export default class TableProject extends Component {
                 key: "project_description",
                 text: "DESCRIPTION",
                 className: "project_description",
-                width: 482,
+                width: 442,
                 align: "center",
                 sortable: true
             },
@@ -65,7 +68,7 @@ export default class TableProject extends Component {
                 key: "action",
                 text: "",
                 className: "action",
-                width: 140,
+                width: 180,
                 align: "center",
                 sortable: false,
                 cell: record => {
@@ -126,7 +129,6 @@ export default class TableProject extends Component {
         this.setState({
             user: user
         });
-        console.log(user, " hgdhgsgadj");
         if(user === null) {
             window.location.replace('/Admin/Authentication', false);
         }
@@ -160,7 +162,7 @@ export default class TableProject extends Component {
                     "project_id": this.state.dataIcon[i].project_id,
                     "project_name": this.state.dataIcon[i].project_name,
                     "project_description": this.state.dataIcon[i].project_description,
-                    "project_img": this.state.dataIcon[i].project_img,
+                    "project_img": "http://178.128.209.69/PTS/project/" + this.state.dataIcon[i].project_img,
                     "project_sqe": this.state.dataIcon[i].project_sqe,
                     "project_status": this.state.dataIcon[i].project_status
                 }

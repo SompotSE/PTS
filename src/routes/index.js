@@ -11,10 +11,13 @@ import Login from "../admin/Login";
 import Logout from "../admin/Logout";
 import Authentication from "../admin/Noti";
 import AddProject from "../admin/AddProject";
+import AddNews from "../admin/AddNews";
 import TableProject from "../admin/TableProject";
+import TableNews from "../admin/TableNews";
 import TableCover from "../admin/TableCover";
 import EditProject from "../admin/EditProject";
 import EditCover from "../admin/EditCover";
+import EditNews from "../admin/EditNews";
 
 import BasicElectronic from "../content/Product/LabPTS/BasicElectronic";
 import BasicAnalog from "../content/Product/LabPTS/BasicAnalog";
@@ -41,10 +44,13 @@ export default () => (
         <Route exact path="/Logout" component={Logout} />
         <Route exact path="/Admin/Authentication" component={Authentication} />
         <Route exact path="/Admin/AddProject" component={AddProject} />
+        <Route exact path="/Admin/AddNews" component={AddNews} />
         <Route exact path="/Admin/TableProject" component={TableProject} />
         <Route exact path="/Admin/TableCover" component={TableCover} />
+        <Route exact path="/Admin/TableNews" component={TableNews} />
         <Route exact path="/Admin/EditProject/:id" component={EditProject} />
         <Route exact path="/Admin/EditCover/:id" component={EditCover} />
+        <Route exact path="/Admin/EditNews/:id" component={EditNews} />
 
         <Route exact path="/Product/Labpts/BasicElectronic" component={BasicElectronic} />
         <Route exact path="/Product/Labpts/BasicAnalog" component={BasicAnalog} />

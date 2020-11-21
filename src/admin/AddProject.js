@@ -65,7 +65,7 @@ export default class AddProject extends Component {
             if (res.code === 200) { 
                 window.location.replace('/Admin/TableProject', false);
             } else {
-                alert("บันทึกข้อมูลไม่สำเร็จ");
+                alert("Save Data Error");
             }
 
             //   fetch('http://localhost:3000/', ip + '/pts/SaveProject.php', {

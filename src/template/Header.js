@@ -66,6 +66,7 @@ export default class Header extends Component {
 
         var sty_sub_admin1 = {};
         var sty_sub_admin2 = {};
+        var sty_sub_admin3 = {};
 
         var sty_contact = {};
         if (window.location.pathname === "/") {
@@ -87,6 +88,8 @@ export default class Header extends Component {
             sty_sub_admin1 = { color: "#C7F50A" };
         } else if (window.location.pathname === "/Admin/TableCover" || window.location.pathname === "/Admin/EditCover") {
             sty_sub_admin2 = { color: "#C7F50A" };
+        } else if (window.location.pathname === "/Admin/TableNews" || window.location.pathname === "/Admin/EditNews" || window.location.pathname === "/Admin/EditNews") {
+            sty_sub_admin3 = { color: "#C7F50A" };
         }
         return (
             // <div>
@@ -126,6 +129,7 @@ export default class Header extends Component {
                                             < NavDropdown title="ADMIN" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
                                                 <NavLink to="/Admin/TableProject" id="dopdown" style={sty_sub_admin1}>PROJECT</NavLink>
                                                 <NavLink to="/Admin/TableCover" id="dopdown" style={sty_sub_admin2}>COVER</NavLink>
+                                                <NavLink to="/Admin/TableNews" id="dopdown" style={sty_sub_admin3}>NEWS</NavLink>
                                                 <NavLink to="/Logout" id="dopdown">LOGOUT</NavLink>
                                             </NavDropdown>
                                             :
@@ -170,6 +174,7 @@ export default class Header extends Component {
                                             < NavDropdown title="ADMIN" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
                                                 <NavLink to="/Admin/TableProject" id="dopdown" style={sty_sub_admin1}>PROJECT</NavLink>
                                                 <NavLink to="/Admin/TableCover" id="dopdown" style={sty_sub_admin2}>COVER</NavLink>
+                                                <NavLink to="/Admin/TableNews" id="dopdown" style={sty_sub_admin3}>NEWS</NavLink>
                                                 <NavLink to="/Logout" id="dopdown">LOGOUT</NavLink>
                                             </NavDropdown>
                                             :
