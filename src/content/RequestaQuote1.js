@@ -18,10 +18,6 @@ class Request extends Component {
     }
 
     async onSubmit() {
-        console.log(this.state.name, " this.state.name");
-        console.log(this.state.email, " this.state.email");
-        console.log(this.state.phone, " this.state.phone");
-        console.log(this.state.message, " this.state.message");
         if (this.state.name === "" || this.state.email === "" || this.state.phone === "" || this.state.message === "") {
             alert("Please complete all information.");
             return false;
