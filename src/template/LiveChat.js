@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { OverlayTrigger , Tooltip } from 'react-bootstrap';
 
 // import { Popover, PopoverBody } from "reactstrap";
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import '../css/footer.css';
 // import logoLiveChat from '../image/buFooter.png';
@@ -16,7 +16,7 @@ import {
     ChildButton,
 } from 'react-floating-button-menu';
 import { MdForum } from 'react-icons/md';
-import { FaFacebookMessenger, FaPhoneAlt, FaTimes, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookMessenger, FaPhoneAlt, FaTimes, FaMapMarkerAlt, FaCommentDots } from 'react-icons/fa';
 import LineIcon from 'react-lineicons';
 
 // const textLiveChat = {
@@ -380,11 +380,18 @@ export default class Footer extends Component {
                 />
 
                 <ChildButton
+                    icon={<NavLink to="/Request"><FaCommentDots name="comment" style={{ fontSize: 25, color: "aliceblue" }} /></NavLink>}
+                    background='black'
+                    size={50}
+                    onClick={() => { window.location = "/Request"; }}
+                />
+
+                <ChildButton
                     icon={
                         // <OverlayTrigger key="left" defaultShow={true} placement="left" overlay={<Tooltip id="tooltip-left"> <strong>Tel Phone</strong></Tooltip>}>
-                            <FaPhoneAlt style={{ fontSize: 25, color: "aliceblue" }} />
+                        <FaPhoneAlt style={{ fontSize: 25, color: "aliceblue" }} />
                         // </OverlayTrigger>
-                        }
+                    }
                     background='teal'
                     size={50}
                     onClick={() => { window.open("tel:+66831885535"); }}
@@ -407,7 +414,7 @@ export default class Footer extends Component {
                     icon={<FaMapMarkerAlt style={{ fontSize: 25, color: "aliceblue" }} />}
                     background='darkred'
                     size={50}
-                // onClick={() => {window.open("/Contact");}}
+                    onClick={() => { window.open("https://goo.gl/maps/pJUA7Ufye1yqayxY9", "_blank"); }}
                 />
             </FloatingMenu>
         )

@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
-// import map from '../image/map.png'
 import map from '../image/map.png';
-// import { Map, GoogleApiWrapper } from 'google-maps-react';
-
-// import GoogleMapReact from 'google-map-react';
- 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// import GoogleMap from './RequestaQuote1Map';
 
 class Request extends Component {
     render() {
@@ -15,36 +10,19 @@ class Request extends Component {
                 <Row style={{ marginTop: '10%', marginBottom: '5%' }}>
                     <Col xs={1} md={1}></Col>
                     <Col xs={10} md={10}>
-                        {/* <Image src={map.png} fluid responsive /> */}
                         <Image src={map} fluid responsive />
                     </Col>
                     <Col xs={1} md={1}></Col>
                 </Row>
-                {/* <Map
-                    google={this.props.google}
-                    style={{ width: '50%', height: '50%', position: 'relative' }}
-                    zoom={12}
-                    initialCenter={{
-                        lat: 13.8185021,
-                        lng: 100.5141232
-                    }}
-                /> */}
-                {/* <div style={{ height: '100vh', width: '100%' }}>
-                    <GoogleMapReact
-                        bootstrapURLKeys={{ key: "AIzaSyAFHTcbUykLDkXfK19GoXmm8EltWUbq9dM" }}
-                        defaultCenter={{
-                            lat: 59.95,
-                            lng: 30.33
-                        }}
-                        defaultZoom={11}
-                    > */}
-                        {/* <AnyReactComponent
-                            lat={59.955413}
-                            lng={30.337844}
-                            text="My Marker"
-                        /> */}
-                    {/* </GoogleMapReact>
-                </div> */}
+
+                {/* <Row style={{ marginTop: '5%', marginBottom: '5%' }}>
+                    <Col xs={1} md={1}></Col>
+                    <Col xs={10} md={10}>
+                        <GoogleMap />
+                    </Col>
+                    <Col xs={1} md={1}></Col>
+                </Row> */}
+               
                 <Row style={{}}>
                     <Col xs={2} md={1}></Col>
                     <Col xs={8} md={5}>
@@ -66,9 +44,6 @@ class Request extends Component {
                                 <Form.Label>Message</Form.Label>
                                 <Form.Control type="message" placeholder="Write message" as="textarea" rows="5" />
                             </Form.Group>
-                            <Form.Text id="passwordHelpBlock" muted>
-                                Please enter the result number from above.
-                            </Form.Text>
                             <Button type="submit" style={{ background: 'Navy', marginTop: '1%' }}>Send message</Button>
                         </Form>
                     </Col>

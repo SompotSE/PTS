@@ -7,6 +7,8 @@ import Contact from "../content/RequestaQuote1";
 import Request from "../content/RequestaQuote";
 import Product from "../content/Product";
 
+import RequestaQuote1Map from "../content/RequestaQuote1Map";
+
 import Login from "../admin/Login";
 import Logout from "../admin/Logout";
 import Authentication from "../admin/Noti";
@@ -39,6 +41,8 @@ export default () => (
         <Route exact path="/Product/TestAndMeasurement" component={Product} />
         <Route exact path="/Product/Labpts" component={Product} />
         <Route exact path="/Product/TestingSolutionIntegration" component={Product} />
+
+        <Route exact path="/TestMap" component={RequestaQuote1Map} />
 
         <Route exact path="/Login" component={Login} />
         <Route exact path="/Logout" component={Logout} />

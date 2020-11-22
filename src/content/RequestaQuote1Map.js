@@ -1,26 +1,54 @@
-import React, { Component } from "react";
-import { Row } from 'react-bootstrap';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+// import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import '../css/marker.css';
 
- class RequestMap extends Component {
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+const AnyReactComponent = ({ text }) => 
+<>
+    <div className="pin"></div> <div className="pulse"></div>
+</>;
+
+class RequestaQuote1Map extends Component {
+    static defaultProps = {
+        center: {
+            lat: 13.943715,
+            lng: 100.563774
+        },
+        zoom: 16
+    };
+
     render() {
         return (
-            <Row>
-                <Map
-                    google={this.props.google}
-                    style={{ width: '80%', height: '80%' }}
-                    zoom={12}
-                    initialCenter={{
-                        lat: 13.8185021,
-                        lng: 100.5141232
-                    }}
-                />
-            </Row>
-        )
-
+            // Important! Always set the container height explicitly
+            <div style={{ height: '50vh', width: '100%' }}>
+                <GoogleMapReact
+                    // bootstrapURLKeys={{ key: "AIzaSyAOZEMyf1aCftH2yCBpseNxMm0txvtyI7I" }}
+                    bootstrapURLKeys={{ key: "" }}
+                    defaultCenter={this.props.center}
+                    defaultZoom={this.props.zoom}
+                >
+                    {/* <OverlayTrigger
+                        trigger="click"
+                        key="top"
+                        placement="top"
+                        overlay={
+                            <Tooltip id="tooltip-top">
+                                <strong>PTS COMBINATION</strong>.
+                            </Tooltip>
+                        }
+                    > */}
+                        <AnyReactComponent
+                            lat={13.943715}
+                            lng={100.563774}
+                            text="My Marker"
+                        />
+                    {/* </OverlayTrigger> */}
+                </GoogleMapReact>
+            </div >
+        );
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyAFHTcbUykLDkXfK19GoXmm8EltWUbq9dM")
-})(RequestMap)
+export default RequestaQuote1Map;
