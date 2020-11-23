@@ -79,11 +79,11 @@ export default class About extends Component {
                                     several government agencies and private entities in Thailand.
                                 </p> */}
                                 <Row style={contentDetail}>
-                                    PTS COMBINATION Co., Ltd. Is committed to providing
+                                    PTS COMBINATION Co., Ltd. is committed to providing
                                     complete solution to general research test and monitoring
                                     equipment needs of researchers, academicians, evaluators
                                     and technicians by supplying high quality, multi-function
-                                    and state of the art Test and Measurement instruments to
+                                    and state of the art test and measurement instruments to
                                     government and private research facilities.
                                 </Row>
                                 <Row style={contentDetail}>
@@ -97,7 +97,7 @@ export default class About extends Component {
                     </Row>
                 </div>
 
-                <div style={project}>Project Reference</div>
+                <div style={project}>PROJECT REFERENCE</div>
                 <Container>
                     <AboutProject />
                 </Container>
