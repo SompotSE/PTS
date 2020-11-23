@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import map from '../image/map.png';
 import GoogleMap from './RequestaQuote1Map';
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 class Request extends Component {
     constructor(props) {

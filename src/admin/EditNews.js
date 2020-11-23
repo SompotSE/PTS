@@ -3,7 +3,7 @@ import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class EditNews extends Component {
     constructor(props) {
@@ -44,7 +44,7 @@ export default class EditNews extends Component {
             id: data_news.news_id,
             detail: data_news.news_detail,
             img: data_news.news_img,
-            img_path: "http://178.128.209.69/PTS/news/" + data_news.news_img,
+            img_path: "http://178.128.209.69:8080/PTS/news/" + data_news.news_img,
         });
     }
 

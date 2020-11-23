@@ -6,7 +6,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class TableCover extends Component {
     constructor(props) {
@@ -145,7 +145,7 @@ export default class TableCover extends Component {
                     "name": "COVER" + (i+1),
                     "cover_id": this.state.dataIcon[i].cover_id,
                     "cover_img": this.state.dataIcon[i].cover_img,
-                    "cover_img_path": "http://178.128.209.69/PTS/cover/" + this.state.dataIcon[i].cover_img
+                    "cover_img_path": "http://178.128.209.69:8080/PTS/cover/" + this.state.dataIcon[i].cover_img
                 }
             );
         }

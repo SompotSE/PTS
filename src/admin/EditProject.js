@@ -4,7 +4,7 @@ import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class EditProject extends Component {
     constructor(props) {
@@ -50,7 +50,7 @@ export default class EditProject extends Component {
             name: data_project.project_name,
             desc: data_project.project_description,
             img: data_project.project_img,
-            img_path: "http://178.128.209.69/PTS/project/" + data_project.project_img,
+            img_path: "http://178.128.209.69:8080/PTS/project/" + data_project.project_img,
         });
     }
 

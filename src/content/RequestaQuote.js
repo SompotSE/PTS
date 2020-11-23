@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Container, Row, Button, Col } from 'react-bootstrap';
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class Request extends Component {
     constructor(props) {

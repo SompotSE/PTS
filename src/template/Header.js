@@ -18,10 +18,10 @@ var URL_SERVICE = "https://www.yokogawa.com/solutions/services/basic-maintenace-
 // var URL_DIGITAL = "https://www.dspace.com/en/pub/home.cfm";
 var URL_METROLOGICAL = "https://novalynx.com/store/pc/home2.asp";
 
-var cover1 = "http://178.128.209.69/PTS/cover/cover1.jpg";
-var cover2 = "http://178.128.209.69/PTS/cover/cover2.jpg";
-var cover3 = "http://178.128.209.69/PTS/cover/cover3.jpg";
-var cover4 = "http://178.128.209.69/PTS/cover/cover4.jpg";
+var cover1 = "http://178.128.209.69:8080/PTS/cover/cover1.jpg";
+var cover2 = "http://178.128.209.69:8080/PTS/cover/cover2.jpg";
+var cover3 = "http://178.128.209.69:8080/PTS/cover/cover3.jpg";
+var cover4 = "http://178.128.209.69:8080/PTS/cover/cover4.jpg";
 
 export default class Header extends Component {
     constructor(props) {

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 // import axios from 'axios';
 // import { FaVrCardboard } from "react-icons/fa";
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class AddProject extends Component {
     constructor(props) {

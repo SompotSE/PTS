@@ -7,7 +7,7 @@ import '../css/about.css';
 
 var projectDetail = {};
 // var ip = "http://localhost";
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class TestMeasurIcon extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ export default class TestMeasurIcon extends Component {
 
     project_for() {
         return this.state.dataIcon.map((data) => {
-            var img = 'http://178.128.209.69/PTS/project/' + data.project_img;
+            var img = 'http://178.128.209.69:8080/PTS/project/' + data.project_img;
             // var img = require('../image/' + data.project_img );
             return <Col md={4} lg={4} xs={6} style={{ padding: "1%" }}>
                 <Row>

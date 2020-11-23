@@ -1,7 +1,7 @@
 {
   "name": "pts",
-  "homepage": "http://178.128.209.69:5000/",
-  "proxy": "http://178.128.209.69/",
+  "homepage": "http://178.128.209.69/",
+  "proxy": "http://178.128.209.69:8080/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

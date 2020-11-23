@@ -6,7 +6,7 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69";
+var ip = "http://178.128.209.69:8080";
 
 export default class TableProject extends Component {
     constructor(props) {
@@ -162,7 +162,7 @@ export default class TableProject extends Component {
                     "project_id": this.state.dataIcon[i].project_id,
                     "project_name": this.state.dataIcon[i].project_name,
                     "project_description": this.state.dataIcon[i].project_description,
-                    "project_img": "http://178.128.209.69/PTS/project/" + this.state.dataIcon[i].project_img,
+                    "project_img": "http://178.128.209.69:8080/PTS/project/" + this.state.dataIcon[i].project_img,
                     "project_sqe": this.state.dataIcon[i].project_sqe,
                     "project_status": this.state.dataIcon[i].project_status
                 }
