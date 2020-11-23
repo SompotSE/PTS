@@ -24,8 +24,8 @@ class RequestaQuote1Map extends Component {
             // Important! Always set the container height explicitly
             <div style={{ height: '50vh', width: '100%' }}>
                 <GoogleMapReact
-                    // bootstrapURLKeys={{ key: "AIzaSyAOZEMyf1aCftH2yCBpseNxMm0txvtyI7I" }}
-                    bootstrapURLKeys={{ key: "" }}
+                    bootstrapURLKeys={{ key: "AIzaSyBE6J11a5MdRIs7XT112VKntqCxZCELKcs" }}
+                    // bootstrapURLKeys={{ key: "" }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >
@@ -42,7 +42,7 @@ class RequestaQuote1Map extends Component {
                         <AnyReactComponent
                             lat={13.943715}
                             lng={100.563774}
-                            text="My Marker"
+                            text="PTS COMBINATION"
                         />
                     {/* </OverlayTrigger> */}
                 </GoogleMapReact>

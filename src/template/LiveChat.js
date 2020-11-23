@@ -380,10 +380,10 @@ export default class Footer extends Component {
                 />
 
                 <ChildButton
-                    icon={<NavLink to="/Request"><FaCommentDots name="comment" style={{ fontSize: 25, color: "aliceblue" }} /></NavLink>}
+                    icon={<NavLink to="/Request"><FaCommentDots name="comment" style={{ fontSize: 50, color: "aliceblue", padding: "20%" }} /></NavLink>}
                     background='black'
                     size={50}
-                    onClick={() => { window.location = "/Request"; }}
+                    //onClick={() => { window.location = "/Request"; }}
                 />
 
                 <ChildButton
@@ -411,10 +411,11 @@ export default class Footer extends Component {
                     onClick={() => { window.open("https://web.facebook.com/ptscombinationTH?_rdc=1&_rdr", "_blank"); }}
                 />
                 <ChildButton
-                    icon={<FaMapMarkerAlt style={{ fontSize: 25, color: "aliceblue" }} />}
+                    icon={<NavLink to="/Contact"><FaMapMarkerAlt style={{ fontSize: 50, color: "aliceblue", padding: "20%" }} /></NavLink>}
                     background='darkred'
                     size={50}
-                    onClick={() => { window.open("https://goo.gl/maps/pJUA7Ufye1yqayxY9", "_blank"); }}
+                    // onClick={() => { window.open("https://goo.gl/maps/pJUA7Ufye1yqayxY9", "_blank"); }}
+                    //onClick={() => { window.location = "/Contact"; }}
                 />
             </FloatingMenu>
         )

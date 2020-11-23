@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import map from '../image/map.png';
-// import GoogleMap from './RequestaQuote1Map';
+import GoogleMap from './RequestaQuote1Map';
 var ip = "http://178.128.209.69";
 
 class Request extends Component {
@@ -55,13 +55,13 @@ class Request extends Component {
                     <Col xs={1} md={1}></Col>
                 </Row>
 
-                {/* <Row style={{ marginTop: '5%', marginBottom: '5%' }}>
+                <Row style={{ marginTop: '5%', marginBottom: '5%' }}>
                     <Col xs={1} md={1}></Col>
                     <Col xs={10} md={10}>
                         <GoogleMap />
                     </Col>
                     <Col xs={1} md={1}></Col>
-                </Row> */}
+                </Row>
                
                 <Row style={{}}>
                     <Col xs={2} md={1}></Col>
