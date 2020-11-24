@@ -176,7 +176,7 @@ export default class TableNews extends Component {
             <Container>
                 <Row style={{ marginTop: "5%", marginLeft: "5%", marginRight: "5%" }}>
                     <Col style={{ textAlign: "center" }}>
-                        <h4 >Project</h4>
+                        <h4 >News</h4>
                     </Col>
                 </Row>
                 <Row >

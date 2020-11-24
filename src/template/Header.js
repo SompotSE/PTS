@@ -155,9 +155,9 @@ export default class Header extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={(e) => this.toggle2(e)} />
                         <Navbar.Collapse id="basic-navbar-nav" onClick={(e) => this.toggle2(e)}>
                             <Nav className="mr-auto" style={{ width: "110%" }}>
-                                <NavLink to="/" id="nav-Header" style={sty_home}>HOME</NavLink >
-                                <NavLink to="/About" id="nav-Header" style={sty_about}>ABOUT US</NavLink>
-                                <NavDropdown title="PRODUCT" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
+                                <NavLink to="/" id="nav-Header2" style={sty_home}>HOME</NavLink >
+                                <NavLink to="/About" id="nav-Header2" style={sty_about}>ABOUT US</NavLink>
+                                <NavDropdown title="PRODUCT" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%", display: "flex", textAlign: "center", alignItems: "center" }} active={this.state.dropdownOpen2}>
                                     <NavLink to="/Product/TestAndMeasurement" id="dopdown" style={sty_sub_product1}>Test & Measurement Product</NavLink>
                                     <NavLink to="/Product/Labpts" id="dopdown" style={sty_sub_product2}>LABPTS+</NavLink>
                                     {/* <a href={URL_DIGITAL} target="_blank" id="dopdown" rel="noopener noreferrer">Digital Signal Processing and Control Engineering</a> */}
@@ -165,13 +165,13 @@ export default class Header extends Component {
                                     <NavLink to="/Product/TestingSolutionIntegration" id="dopdown" style={sty_sub_product3}>Testing Solution Integration</NavLink>
                                     <a href={URL_METROLOGICAL} target="_blank" id="dopdown" rel="noopener noreferrer">Metrological Sensors & Systems</a>
                                 </NavDropdown>
-                                <a href={URL_TRAINING} target="_blank" id="nav-Header" rel="noopener noreferrer">TRAINING</a>
-                                <a href={URL_SERVICE} target="_blank" id="nav-Header" rel="noopener noreferrer">SERVICE</a>
-                                <NavLink to="/Contact" id="nav-Header" style={sty_contact}>CONTACT US</NavLink>
+                                <a href={URL_TRAINING} target="_blank" id="nav-Header2" rel="noopener noreferrer">TRAINING</a>
+                                <a href={URL_SERVICE} target="_blank" id="nav-Header2" rel="noopener noreferrer">SERVICE</a>
+                                <NavLink to="/Contact" id="nav-Header2" style={sty_contact}>CONTACT US</NavLink>
                                 {
                                     this.state.user !== null ?
                                         this.state.user.levelName === "admin" ?
-                                            < NavDropdown title="ADMIN" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%" }} active={this.state.dropdownOpen2}>
+                                            < NavDropdown title="ADMIN" id={sty_product} style={{ paddingLeft: "2%", paddingRight: "2%", display: "flex", textAlign: "center", alignItems: "center" }} active={this.state.dropdownOpen2}>
                                                 <NavLink to="/Admin/TableProject" id="dopdown" style={sty_sub_admin1}>PROJECT</NavLink>
                                                 <NavLink to="/Admin/TableCover" id="dopdown" style={sty_sub_admin2}>COVER</NavLink>
                                                 <NavLink to="/Admin/TableNews" id="dopdown" style={sty_sub_admin3}>NEWS</NavLink>
@@ -181,6 +181,18 @@ export default class Header extends Component {
                                             <> </>
                                         :
                                         <> </>
+                                }
+                                {window.innerWidth >= 850 ?
+                                <div id="open">
+                                    <div>Office Hours</div>
+                                    <div>Mon - Fri: 8:30 - 17:00</div>
+                                    <div>Sat - Sun: Closed</div> 
+                                    {/* Office Hours
+                                    Mon - Fri: 8:30 - 17:00
+                                    Sat - Sun: Closed */}
+                                </div>
+                                :
+                                <></>
                                 }
                             </Nav>
                         </Navbar.Collapse>

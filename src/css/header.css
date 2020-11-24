@@ -22,6 +22,16 @@
     padding-right: 2%;
 }
 
+#nav-Header2{
+    color: aliceblue;
+    font-weight: bold;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
 #header{
     position: fixed;
     left: 0;
@@ -118,6 +128,14 @@ body, html{
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+}
+
+#open{
+    color: aliceblue;
+    font-size: x-small;
+    /* display: flex;
+    align-items: flex-end;s
+    text-align: end; */
 }
 
 /* .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {

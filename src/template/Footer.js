@@ -7,6 +7,7 @@ import '../css/footer.css';
 // import logo2 from '../image/logo/logo2.png';
 import logo3 from '../image/logo/logo3.png';
 import logo4 from '../image/logo/logo4.png';
+import logo5 from '../image/logo/logo5.png';
 
 import logoFacebook from '../image/facebook.png'
 import logoLine from '../image/line.png'
@@ -17,7 +18,8 @@ import Facebook2 from '../image/facebook2.png'
 // var URL1 = "http://www.pg-intergroup.com/";
 // var URL2 = "https://www.dspace.com/en/pub/home.cfm";
 var URL3 = "https://novalynx.com/store/pc/home2.asp";
-var URL4 = "https://www.yokogawa.com/th";
+var URL4 = "https://www.yokogawa.com/";
+var URL5 = "https://www.hioki.com/en/";
 
 export default class Footer extends Component {
     render() {
@@ -69,6 +71,16 @@ export default class Footer extends Component {
                                     <a href={URL4} target="_blank" id="dopdown" rel="noopener noreferrer">
                                         <img
                                             src={logo4}
+                                            width="60%"
+                                            className="d-inline-block align-top"
+                                            alt="logo"
+                                        />
+                                    </a>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <a href={URL5} target="_blank" id="dopdown" rel="noopener noreferrer">
+                                        <img
+                                            src={logo5}
                                             width="60%"
                                             className="d-inline-block align-top"
                                             alt="logo"
