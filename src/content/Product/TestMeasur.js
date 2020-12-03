@@ -26,7 +26,7 @@ export default class TestMeasur extends Component {
                                 <a href={URL_OSCILL} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Oscilloscopes</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
-                        <Row>
+                        <Row style={{ textAlign: "justify"}}>
                             World-class digital oscilloscopes
                             from Yokogawa: The digital
                             oscilloscopes have high-speed
@@ -45,7 +45,7 @@ export default class TestMeasur extends Component {
                                 <a href={URL_POWER} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Power Analyzers and Power Meters</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
-                        <Row>
+                        <Row style={{ textAlign: "justify"}}>
                             Yokogawa, the world's largest
                             manufacturer of energy and power
                             analyzers and meters, provides a
@@ -60,7 +60,7 @@ export default class TestMeasur extends Component {
                                 <a href={URL_DATA} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Data Acquisition (DAQ)</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
-                        <Row>
+                        <Row style={{ textAlign: "justify"}}>
                             Yokogawa data acquisition systems
                             give you the most flexibility and
                             power to measure, display, store,
@@ -76,7 +76,7 @@ export default class TestMeasur extends Component {
                                 <a href={URL_OPTICAL} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Optical Test Equipment</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
-                        <Row>
+                        <Row style={{ textAlign: "justify"}}>
                             Yokogawa offers solutions to
                             measure both traditional and
                             cutting-edge optical components
@@ -92,7 +92,7 @@ export default class TestMeasur extends Component {
                                 <a href={URL_SIGNAL} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Signal Generators, Sources and Supplies</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
-                        <Row>
+                        <Row style={{ textAlign: "justify"}}>
                             For general purpose standalone
                             applications or as core
                             components in a high speed test
@@ -108,7 +108,7 @@ export default class TestMeasur extends Component {
                                 <a href={URL_PORTABLE} target="_blank" id="nav-Header" rel="noopener noreferrer"><div id="header-sub">Portable and Handheld Instruments</div></a> <FaExternalLinkAlt />
                             </Col>
                         </Row>
-                        <Row>
+                        <Row style={{ textAlign: "justify"}}>
                             Yokogawa's Portable and
                             Handheld Instruments offer a
                             broad range of portable test

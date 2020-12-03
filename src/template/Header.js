@@ -4,7 +4,7 @@ import { Navbar, Nav, NavDropdown, Col, Row, Container, Image } from 'react-boot
 
 import { NavLink } from 'react-router-dom';
 // import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import logo from '../image/logoPTS.png'
+import logo from '../image/logoedit.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import cover1 from '../image/cover1.jpg'

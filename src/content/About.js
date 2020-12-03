@@ -43,15 +43,18 @@ export default class About extends Component {
     render() {
         if (window.innerWidth < 768) {
             contentDetail = {
-                fontSize: '100%'
+                fontSize: '100%',
+                textAlign: "justify"
             };
         } else if (window.innerWidth < 1025) {
             contentDetail = {
-                fontSize: "calc(0.65vh + 0.95vw)"
+                fontSize: "calc(0.65vh + 0.95vw)",
+                textAlign: "justify"
             };
         } else {
             contentDetail = {
-                fontSize: "calc(0.35vh + 0.95vw)"
+                fontSize: "calc(0.35vh + 0.95vw)",
+                textAlign: "justify"
             };
         }
         return (

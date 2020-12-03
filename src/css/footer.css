@@ -32,6 +32,7 @@
 #about2{
     color: aliceblue;
     font-size: calc(0.35vh + 0.60vw);
+    text-align: justify;
 }
 
 #about3{

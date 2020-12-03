@@ -20,7 +20,7 @@ export default class Request extends Component {
                             {/* </Row> */}
                             {/* <Row> */}
                             <Col xs={1} md={1}><FaForward /></Col>
-                            <Col xs={11} md={11}>
+                            <Col xs={11} md={11} >
                                 The student should have the following skills to pursue Analog System Lab: Basic understanding of electronic circuits, Basic computer skills required to run the simulation tools, Ability to use the oscilloscope, Concepts of gain, bandwidth, transfer function, filters, regulators and wave shaping
                                 </Col>
                             {/* </Row> 
