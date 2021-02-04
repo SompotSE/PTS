@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 // import axios from 'axios';
 // import { FaVrCardboard } from "react-icons/fa";
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class AddProject extends Component {
     constructor(props) {
@@ -52,7 +52,7 @@ export default class AddProject extends Component {
                 img: this.state.files[0].base64
             }
 
-            const response = await fetch(ip + '/PTS/SaveProject.php', {
+            const response = await fetch(ip + '/SaveProject.php', {
                 method: 'POST',
                 // mode: 'no-cors',
                 // headers: {
@@ -68,7 +68,7 @@ export default class AddProject extends Component {
                 alert("Save Data Error");
             }
 
-            //   fetch('http://localhost:3000/', ip + '/pts/SaveProject.php', {
+            //   fetch('http://localhost:3000/', ip + '/SaveProject.php', {
             //     method : 'post',
             //     mode:    'no-cors',
             //     headers: {
@@ -81,7 +81,7 @@ export default class AddProject extends Component {
             //   .then((data) => console.log(data))
             //   .catch((error) => console.log(error))
 
-            // axios.post(ip + '/pts/SaveProject.php', save_project, { mode: 'no-cors' })
+            // axios.post(ip + '/SaveProject.php', save_project, { mode: 'no-cors' })
             //     .then(function (res) {
             //         console.log(res, " res");
             //         if (res.data === 'save project successfully') {

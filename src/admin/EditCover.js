@@ -4,7 +4,7 @@ import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class EditCover extends Component {
     constructor(props) {
@@ -37,14 +37,14 @@ export default class EditCover extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetEditCover.php?cover_id=" + this.props.match.params.id;
+        var url_project = ip + "/GetEditCover.php?cover_id=" + this.props.match.params.id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         console.log(data_project, " data_project");
         this.setState({
             id: data_project.cover_id,
             img: data_project.cover_img,
-            img_path: "http://178.128.209.69:8080/PTS/cover/" + data_project.cover_img,
+            img_path: ip + "/cover/" + data_project.cover_img,
         });
     }
 
@@ -63,7 +63,7 @@ export default class EditCover extends Component {
                 img: ""
             }
         }
-        const response = await fetch(ip + '/PTS/SaveEditCover.php', {
+        const response = await fetch(ip + '/SaveEditCover.php', {
             method: 'POST',
             // mode: 'no-cors',
             // headers: {

@@ -7,7 +7,7 @@ import '../css/about.css';
 
 var projectDetail = {};
 // var ip = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class TestMeasurIcon extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ export default class TestMeasurIcon extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetProject.php";
+        var url_project = ip + "/GetProject.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({
@@ -28,7 +28,7 @@ export default class TestMeasurIcon extends Component {
 
     project_for() {
         return this.state.dataIcon.map((data) => {
-            var img = 'http://178.128.209.69:8080/PTS/project/' + data.project_img;
+            var img = ip + '/project/' + data.project_img;
             // var img = require('../image/' + data.project_img );
             return <Col md={4} lg={4} xs={6} style={{ padding: "1%" }}>
                 <Row>

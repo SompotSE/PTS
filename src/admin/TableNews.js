@@ -6,7 +6,7 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class TableNews extends Component {
     constructor(props) {
@@ -135,7 +135,7 @@ export default class TableNews extends Component {
     }
 
     async onDelete(id) {
-        var url_project = ip + "/PTS/DeleteNews.php?id=" + id;
+        var url_project = ip + "/DeleteNews.php?id=" + id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         if (data_project === "delete news successfully") {
@@ -146,7 +146,7 @@ export default class TableNews extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetNews.php";
+        var url_project = ip + "/GetNews.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({
@@ -162,7 +162,7 @@ export default class TableNews extends Component {
                     "news_detail": this.state.dataIcon[i].news_detail,
                     "news_id": this.state.dataIcon[i].news_id,
                     "news_img": this.state.dataIcon[i].news_img,
-                    "news_img_path": "http://178.128.209.69:8080/PTS/news/" + this.state.dataIcon[i].news_img
+                    "news_img_path": ip + "/news/" + this.state.dataIcon[i].news_img
                 }
             );
         }

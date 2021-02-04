@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Container, Button, Image, Row } from 'react-bootstrap';
 import logo from '../image/logoPTS.png';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class Login extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ export default class Login extends Component {
             password: this.state.password
         }
 
-        const response = await fetch(ip + '/PTS/ChackUser.php', {
+        const response = await fetch(ip + '/ChackUser.php', {
             method: 'POST',
             body: JSON.stringify(data)
         });

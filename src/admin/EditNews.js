@@ -3,7 +3,7 @@ import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class EditNews extends Component {
     constructor(props) {
@@ -37,14 +37,14 @@ export default class EditNews extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetEditNews.php?news_id=" + this.props.match.params.id;
+        var url_project = ip + "/GetEditNews.php?news_id=" + this.props.match.params.id;
         const project = await axios.get(url_project);
         const data_news = project.data;
         this.setState({
             id: data_news.news_id,
             detail: data_news.news_detail,
             img: data_news.news_img,
-            img_path: "http://178.128.209.69:8080/PTS/news/" + data_news.news_img,
+            img_path: ip + "/news/" + data_news.news_img,
         });
     }
 
@@ -68,7 +68,7 @@ export default class EditNews extends Component {
                     img: ""
                 }
             }
-            const response = await fetch(ip + '/PTS/SaveEditNews.php', {
+            const response = await fetch(ip + '/SaveEditNews.php', {
                 method: 'POST',
                 body: JSON.stringify(save_news)
             });

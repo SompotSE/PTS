@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Container, Row, Button, Col } from 'react-bootstrap';
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class Request extends Component {
     constructor(props) {
@@ -37,7 +37,7 @@ export default class Request extends Component {
                 desc: this.state.desc
             }
 
-            const response = await fetch(ip + '/PTS/SaveRequest.php', {
+            const response = await fetch(ip + '/SaveRequest.php', {
                 method: 'POST',
                 body: JSON.stringify(save_request)
             });

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Container, Row, Button, Col, Image } from 'react-bootstrap';
 import map from '../image/map.png';
 import GoogleMap from './RequestaQuote1Map';
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 class Request extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ class Request extends Component {
                 message: this.state.message
             }
 
-            const response = await fetch(ip + '/PTS/SaveContact.php', {
+            const response = await fetch(ip + '/SaveContact.php', {
                 method: 'POST',
                 body: JSON.stringify(save_contact)
             });

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 // import axios from 'axios';
 // import { FaVrCardboard } from "react-icons/fa";
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class AddNews extends Component {
     constructor(props) {
@@ -46,7 +46,7 @@ export default class AddNews extends Component {
                 img: this.state.files[0].base64
             }
 
-            const response = await fetch(ip + '/PTS/SaveNews.php', {
+            const response = await fetch(ip + '/SaveNews.php', {
                 method: 'POST',
                 body: JSON.stringify(save_news)
             });

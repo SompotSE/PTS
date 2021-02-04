@@ -4,7 +4,7 @@ import FileBase64 from 'react-file-base64';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class EditProject extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ export default class EditProject extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetEditProject.php?project_id=" + this.props.match.params.id;
+        var url_project = ip + "/GetEditProject.php?project_id=" + this.props.match.params.id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         console.log(data_project, " data_project");
@@ -50,7 +50,7 @@ export default class EditProject extends Component {
             name: data_project.project_name,
             desc: data_project.project_description,
             img: data_project.project_img,
-            img_path: "http://178.128.209.69:8080/PTS/project/" + data_project.project_img,
+            img_path: ip + "/project/" + data_project.project_img,
         });
     }
 
@@ -78,7 +78,7 @@ export default class EditProject extends Component {
                     img: ""
                 }
             }
-            const response = await fetch(ip + '/PTS/SaveEditProject.php', {
+            const response = await fetch(ip + '/SaveEditProject.php', {
                 method: 'POST',
                 body: JSON.stringify(save_project)
             });

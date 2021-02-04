@@ -6,7 +6,7 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import '../css/tableproject.css';
 import axios from 'axios';
 // var ip2 = "http://localhost";
-var ip = "http://178.128.209.69:8080";
+var ip = "https://ptscombination.co.th";
 
 export default class TableProject extends Component {
     constructor(props) {
@@ -135,7 +135,7 @@ export default class TableProject extends Component {
     }
 
     async onDelete(id) {
-        var url_project = ip + "/PTS/DeleteProject.php?id=" + id;
+        var url_project = ip + "/DeleteProject.php?id=" + id;
         const project = await axios.get(url_project);
         const data_project = project.data;
         if (data_project === "delete project successfully") {
@@ -146,7 +146,7 @@ export default class TableProject extends Component {
     }
 
     async componentDidMount() {
-        var url_project = ip + "/PTS/GetProject.php";
+        var url_project = ip + "/GetProject.php";
         const project = await axios.get(url_project);
         const data_project = project.data;
         this.setState({
@@ -162,7 +162,7 @@ export default class TableProject extends Component {
                     "project_id": this.state.dataIcon[i].project_id,
                     "project_name": this.state.dataIcon[i].project_name,
                     "project_description": this.state.dataIcon[i].project_description,
-                    "project_img": "http://178.128.209.69:8080/PTS/project/" + this.state.dataIcon[i].project_img,
+                    "project_img": ip + "/project/" + this.state.dataIcon[i].project_img,
                     "project_sqe": this.state.dataIcon[i].project_sqe,
                     "project_status": this.state.dataIcon[i].project_status
                 }
